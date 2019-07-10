@@ -1,0 +1,46 @@
+.home-page #summer-night-title {
+  text-align: center;
+  padding: 1rem;
+}
+
+.score-board-team-cards {
+  margin: 1rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 4;
+  grid-template-rows: 1;
+}
+
+.team-score-card {
+  color: black;
+  text-align: center;
+  grid-column: auto; 
+  grid-row: 1;
+  margin: 0.2rem;
+}
+
+.team-score-card h5 {
+  font-size: 1.1rem;
+  padding: 0.3rem;
+  padding-bottom: 0;
+}
+
+#team-1-score-card {
+  background-color: hotpink;
+}
+#team-2-score-card {
+  background-color: lemonchiffon;
+}
+#team-3-score-card {
+  background-color: skyblue;
+}
+#team-4-score-card {
+  background-color: violet;
+}
+#summer-night-first-floor {
+  width: 25rem;
+}
+
+#summer-night-second-floor {
+  width: 25rem;
+}

@@ -1,0 +1,117 @@
+.game-map {
+  --basket-ball-border-radious: 25px;
+  --basket-ball-border-color: rgb(100, 100, 100);
+  display: grid;
+  background-color: rgb(250, 250, 250);
+  padding: 1rem;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 20px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(7, 3.5rem);
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.6rem;
+  margin: 1px;
+  padding: 3px;
+  /* border: 1px solid rgb(210, 210, 210); */
+  border-radius: 5px 5px;
+}
+
+.cell:hover {
+  background-color: black;
+}
+
+/* Lavatory */
+.map-cell-mapFirstFloor-2 {
+  border: 1px solid rgb(100, 100, 100);
+}
+.map-cell-mapSecondFloor-12 {
+  border: 1px solid rgb(100, 100, 100);
+}
+
+/* EV 1F */
+.map-cell-mapFirstFloor-4 {
+  border: 1px solid rgb(100, 100, 100);
+}
+.map-cell-mapSecondFloor-4 {
+  border: 1px solid rgb(100, 100, 100);
+}
+
+/* Stairs */
+.map-cell-mapFirstFloor-25 {
+  border: 1px solid rgb(100, 100, 100);
+}
+.map-cell-mapSecondFloor-25 {
+  border: 1px solid rgb(100, 100, 100);
+}
+
+/* Basketball Court 1F */
+.map-cell-mapFirstFloor-14 {
+  border: 1px solid rgb(210, 210, 210);
+  border-top-color: var(--basket-ball-border-color);
+  border-left-color: var(--basket-ball-border-color);
+  border-top-left-radius: var(--basket-ball-border-radious);
+  border-bottom-right-radius: 0px;
+}
+
+.map-cell-mapFirstFloor-15 {
+  border: 1px solid rgb(210, 210, 210);
+  border-top-color: var(--basket-ball-border-color);
+  border-right-color: var(--basket-ball-border-color);
+  border-top-right-radius: var(--basket-ball-border-radious);
+  border-bottom-left-radius: 0px;
+}
+
+.map-cell-mapFirstFloor-20 {
+  border: 1px solid rgb(210, 210, 210);
+  border-left-color: var(--basket-ball-border-color);
+  border-bottom-color: var(--basket-ball-border-color);
+  border-bottom-left-radius: var(--basket-ball-border-radious);
+  border-top-right-radius: 0px;
+}
+
+.map-cell-mapFirstFloor-21 {
+  border: 1px solid rgb(210, 210, 210);
+  border-right-color: var(--basket-ball-border-color);
+  border-bottom-color: var(--basket-ball-border-color);
+  border-bottom-right-radius: var(--basket-ball-border-radious);
+  border-top-left-radius: 0px;
+}
+
+/* Basketball Court 2F */
+.map-cell-mapSecondFloor-14 {
+  border: 1px solid rgb(210, 210, 210);
+  border-top-color: var(--basket-ball-border-color);
+  border-left-color: var(--basket-ball-border-color);
+  border-top-left-radius: var(--basket-ball-border-radious);
+  border-bottom-right-radius: 0px;
+}
+
+.map-cell-mapSecondFloor-15 {
+  border: 1px solid rgb(210, 210, 210);
+  border-top-color: var(--basket-ball-border-color);
+  border-right-color: var(--basket-ball-border-color);
+  border-top-right-radius: var(--basket-ball-border-radious);
+  border-bottom-left-radius: 0px;
+}
+
+.map-cell-mapSecondFloor-20 {
+  border: 1px solid rgb(210, 210, 210);
+  border-left-color: var(--basket-ball-border-color);
+  border-bottom-color: var(--basket-ball-border-color);
+  border-bottom-left-radius: var(--basket-ball-border-radious);
+  border-top-right-radius: 0px;
+}
+
+.map-cell-mapSecondFloor-21 {
+  border: 1px solid rgb(210, 210, 210);
+  border-right-color: var(--basket-ball-border-color);
+  border-bottom-color: var(--basket-ball-border-color);
+  border-bottom-right-radius: var(--basket-ball-border-radious);
+  border-top-left-radius: 0px;
+}

@@ -25,16 +25,6 @@ const Navigation = () => (
             About
           </div>
         </Link>
-        <Link to={ROUTES.RULES}>
-          <div className="nav-item nav-link">
-            Rules
-          </div>
-        </Link>
-        <Link to={ROUTES.GAMES}>
-          <div className="nav-item nav-link">
-            Games
-          </div>
-        </Link>
         <Link to={ROUTES.ADMIN}>
           <div className="nav-item nav-link">
             Admin

@@ -4,14 +4,15 @@
 }
 
 .score-board-team-cards {
-  margin: 1rem;
-  margin-bottom: 2rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.5rem;
   display: grid;
   grid-template-columns: 4;
   grid-template-rows: 1;
 }
 
-.team-score-card {
+.team-score-card-wrapper {
   color: black;
   text-align: center;
   grid-column: auto; 
@@ -19,28 +20,34 @@
   margin: 0.2rem;
 }
 
+.team-score-card {
+  border-radius: 0.3rem;
+}
+
 .team-score-card h5 {
   font-size: 1.1rem;
+
   padding: 0.3rem;
-  padding-bottom: 0;
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
+}
+.team-score-card p {
+  padding: 0.3rem;
 }
 
 #team-1-score-card {
-  background-color: hotpink;
+  background-color: #E63F5C;
 }
 #team-2-score-card {
-  background-color: lemonchiffon;
+  background-color: #FFF7B0;
 }
 #team-3-score-card {
-  background-color: skyblue;
+  background-color: #6EC0FF;
 }
 #team-4-score-card {
-  background-color: violet;
-}
-#summer-night-first-floor {
-  width: 25rem;
+  background-color: #FFA1FB;
 }
 
-#summer-night-second-floor {
-  width: 25rem;
+.home-page-game-end-logo {
+  width: 50%;
 }

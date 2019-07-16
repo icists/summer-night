@@ -7,6 +7,7 @@ import { withFirebase } from '../../components/Firebase';
 import './Home.css';
 import { GameListItem } from '../../components/Game';
 import GameMap, { translateGamesToMap } from '../../components/Map';
+import { Logo } from '../../assets/icons';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -14,8 +15,10 @@ class HomePage extends React.Component {
     this.state = {
       firebaseColorsLoaded: false,
       firebaseGamesLoaded: false,
+      firebaseVisibleLoaded: false,
       colors: {},
       games: {},
+      visible: {},
     }
   }
 
@@ -25,27 +28,70 @@ class HomePage extends React.Component {
         firebaseColorsLoaded: true,
         colors: snapshot.val(),
       })
-    })
+    });
     this.props.firebase.games().on('value', snapshot => {
       this.setState({
         firebaseGamesLoaded: true,
         games: snapshot.val(),
       })
-    })
+    });
+    this.props.firebase.visible().on('value', snapshot => {
+      this.setState({
+        firebaseVisibleLoaded: true,
+        visible: snapshot.val(),
+      });
+    });
   }
 
-  test = () => {
+  componentWillUnmount() {
+    this.props.firebase.colors().off();
+    this.props.firebase.games().off();
+    this.props.firebase.visible().off();
+  }
 
+  renderEndgame() {
+    const { firebaseColorsLoaded } = this.state;
+    return (
+      <div className="home-page">
+        <div className="score-board">
+          {firebaseColorsLoaded
+            ? <React.Fragment><div className="score-board-team-cards">
+                <TeamCard teamNumber={1} teamName="Red" point={"?"} />
+                <TeamCard teamNumber={2} teamName="Yellow" point={"?"} />
+                <TeamCard teamNumber={3} teamName="Blue" point={"?"} />
+                <TeamCard teamNumber={4} teamName="Purple" point={"?"} />
+              </div>
+              <div className="home-page-game-section">
+                <div className="home-page-game-map">
+                  <img className="home-page-game-end-logo" src={Logo} alt="ICISTS logo"/>
+                  <p>
+                    The summer night ends soon! Please hurry to catch the flags!
+                  </p>
+                </div>
+                <hr />
+                <div className="home-page-game-list"></div>
+              </div>
+            </React.Fragment>
+            : <div className="loading-mark text-center">
+                <div className="spinner-border text-secondary" role="status">
+                  <span className="sr-only">Loading...</span>
+                </div>
+              </div>}
+        </div>
+      </div>
+    );
   }
 
   render() {
     const { firebaseColorsLoaded, firebaseGamesLoaded, colors , games } = this.state;
+    const { visible } = this.state.visible;
     const data = translateGamesToMap(games);
+
+    if (!visible) {
+      return this.renderEndgame();
+    }
     return (
       <div className="home-page">
-        <div className="test">
-          <button onClick={this.test}></button>
-        </div>
         <div className="score-board">
           {firebaseColorsLoaded
             ? <div className="score-board-team-cards">
@@ -67,6 +113,7 @@ class HomePage extends React.Component {
             <GameMap id="mapSecondFloor" data={data[2]}/>
           </div>
           <hr/>
+          <div className="home-page-game-list">
           {firebaseGamesLoaded
             ? <ol className="list-group">
                 {Object.keys(games).map((gameID) => {
@@ -74,9 +121,12 @@ class HomePage extends React.Component {
                   return <GameListItem game={game} id={gameID} key={gameID} />;
                 })}
             </ol>
-            : <div className="loading-mark text-center"> <div className="spinner-border text-secondary" role="status">
-                <span className="sr-only">Loading...</span>
-              </div></div>}
+            : <div className="loading-mark text-center">
+                <div className="spinner-border text-secondary" role="status">
+                  <span className="sr-only">Loading...</span>
+                </div>
+              </div>}
+          </div>
         </div>
       </div>
     );

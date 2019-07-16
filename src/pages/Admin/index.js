@@ -1,6 +1,8 @@
 import React from 'react';
 import { withFirebase } from '../../components/Firebase';
 import { GameAdminListItem } from '../../components/Game';
+import { compose } from 'recompose';
+import { withAuthorization, withAuthentication } from '../../components/Session';
 
 
 class NewGameBase extends React.Component {
@@ -133,12 +135,25 @@ class InitializerBase extends React.Component {
   }
 
   initColors = () => {
-    this.props.firebase.colors().set({
-      blue: { point: 0 },
-      purple: { point: 0 },
-      red: { point: 0 },
-      yellow: { point: 0 },
-    });
+    this.props.firebase.games().once('value', snapshot => {
+      const games = snapshot.val();
+      Object.keys(games).forEach(gameID => {
+        const game = games[gameID];
+        game.team = -1;
+        game.isRunning = false;
+        game.history = {};
+      })
+      this.props.firebase.games().set({
+        ...games,
+      }).then(() => {
+        this.props.firebase.colors().set({
+          blue: { point: 0 },
+          purple: { point: 0 },
+          red: { point: 0 },
+          yellow: { point: 0 },
+        });
+      })
+    })
   }
 
   render() {
@@ -151,6 +166,48 @@ class InitializerBase extends React.Component {
 
 const Initializer = withFirebase(InitializerBase);
 
+class ToggleVisibleBase extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: {},
+      firebaseVisibleLoaded: false,
+    }
+  }
+
+  componentDidMount() {
+    this.props.firebase.visible().on('value', snapshot => {
+      this.setState({
+        visible: snapshot.val(),
+        firebaseVisibleLoaded: true,
+      });
+    });
+  }
+
+  componentWillUnmount() {
+    this.props.firebase.visible().off();
+  }
+
+  toggleEndgame = () => {
+    const { visible } = this.state.visible;
+    this.props.firebase.visible().update({
+      visible: visible ? false : true,
+    });
+  }
+
+  render() {
+    const { visible } = this.state.visible;
+    console.log(visible);
+    return (
+      <button className="btn btn-danger" onClick={this.toggleEndgame}>
+        { visible ? <span>Endgame On</span> : <span>Endgame Off</span>}
+      </button>
+    );
+  }
+}
+
+const ToggleVisible = withFirebase(ToggleVisibleBase);
+
 class AdminPage extends React.Component {
   constructor(props) {
     super(props);
@@ -158,6 +215,10 @@ class AdminPage extends React.Component {
       games: {},
       firebaseGamesLoaded: false,
     }
+  }
+
+  doSignOut = () => {
+    this.props.firebase.doSignOut();
   }
 
   componentDidMount() {
@@ -169,6 +230,11 @@ class AdminPage extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    this.props.firebase.games().off();
+  }
+
+
   render() {
     const { games, firebaseGamesLoaded } = this.state;
     return (
@@ -178,21 +244,32 @@ class AdminPage extends React.Component {
         <ol className="list-group">
           {firebaseGamesLoaded
             ? <ol className="list-group">
-                {Object.keys(games).map((gameID) => {
-                  const game = games[gameID];
-                  return <GameAdminListItem game={game} id={gameID} key={gameID} />;
-                })}
+              {Object.keys(games).map((gameID) => {
+                const game = games[gameID];
+                return <GameAdminListItem game={game} id={gameID} key={gameID} />;
+              })}
             </ol>
             : <div className="loading-mark text-center"> <div className="spinner-border text-secondary" role="status">
-                <span className="sr-only">Loading...</span>
-              </div></div>}
+              <span className="sr-only">Loading...</span>
+            </div></div>}
         </ol>
-        <hr/>
-        <NewGame/>
-        <Initializer/>
+        <hr />
+        <NewGame />
+        <hr />
+        <div className="row text-center">
+          <div className="col"> <Initializer /> </div>
+          <div className="col"> <ToggleVisible /> </div>
+        </div>
+        <button onClick={this.doSignOut}>Sign Out</button>
       </div>
     );
   }
 }
 
-export default withFirebase(AdminPage);
+const condition = authUser => authUser != null;
+
+export default compose(
+  withFirebase,
+  withAuthentication,
+  withAuthorization(condition),
+)(AdminPage);

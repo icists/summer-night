@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import * as ROUTES from '../../pages/routes';
 
 export const GameListItem = ({ game, id }) => (
   <li className="list-group-item" data-toggle="modal" data-target={`#gameInfoModal-${id}`}>

@@ -1,3 +1,16 @@
 #game-admin-title {
   margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.log-team-color-badge {
+  background-color: red;
+}
+
+.team-color {
+  margin-top: .8em;
+}
+
+.game-version {
+  margin-top: .8em;
 }

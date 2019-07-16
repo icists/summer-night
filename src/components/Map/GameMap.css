@@ -13,105 +13,134 @@
 .cell {
   display: flex;
   justify-content: center;
+  align-content: center;
   align-items: center;
   text-align: center;
-  font-size: 0.6rem;
   margin: 1px;
-  padding: 3px;
-  /* border: 1px solid rgb(210, 210, 210); */
+  padding: 0.1rem;
   border-radius: 5px 5px;
 }
 
+.facility-icon {
+  max-width: 70%;
+  max-height: 80%;
+}
+
 .cell:hover {
-  background-color: black;
+  background-color: rgb(200, 200, 200);
 }
 
 /* Lavatory */
-.map-cell-mapFirstFloor-2 {
-  border: 1px solid rgb(100, 100, 100);
-}
-.map-cell-mapSecondFloor-12 {
-  border: 1px solid rgb(100, 100, 100);
-}
+.map-cell-mapFirstFloor-2 { border: 1px solid rgb(100, 100, 100); }
+.map-cell-mapSecondFloor-12 { border: 1px solid rgb(100, 100, 100); }
 
-/* EV 1F */
-.map-cell-mapFirstFloor-4 {
-  border: 1px solid rgb(100, 100, 100);
-}
-.map-cell-mapSecondFloor-4 {
-  border: 1px solid rgb(100, 100, 100);
-}
+/* EV */
+.map-cell-mapFirstFloor-4 { border: 1px solid rgb(100, 100, 100); }
+.map-cell-mapSecondFloor-4 { border: 1px solid rgb(100, 100, 100); }
 
 /* Stairs */
-.map-cell-mapFirstFloor-25 {
-  border: 1px solid rgb(100, 100, 100);
-}
-.map-cell-mapSecondFloor-25 {
-  border: 1px solid rgb(100, 100, 100);
-}
+.map-cell-mapFirstFloor-25 { border: 1px solid rgb(100, 100, 100); }
+.map-cell-mapSecondFloor-25 { border: 1px solid rgb(100, 100, 100); }
+.map-cell-mapFirstFloor-5 { border: 1px solid rgb(100, 100, 100); }
+.map-cell-mapSecondFloor-5 { border: 1px solid rgb(100, 100, 100); }
+
+/* Door */
+.map-cell-mapSecondFloor-3 { border: 1px solid rgb(100, 100, 100); }
 
 /* Basketball Court 1F */
 .map-cell-mapFirstFloor-14 {
-  border: 1px solid rgb(210, 210, 210);
+  border-top: 1px solid;
+  border-left: 1px solid;
   border-top-color: var(--basket-ball-border-color);
   border-left-color: var(--basket-ball-border-color);
   border-top-left-radius: var(--basket-ball-border-radious);
   border-bottom-right-radius: 0px;
+
+  margin-left: 3px;
+  margin-top: 3px;
 }
 
 .map-cell-mapFirstFloor-15 {
-  border: 1px solid rgb(210, 210, 210);
+  border-top: 1px solid;
+  border-right: 1px solid;
   border-top-color: var(--basket-ball-border-color);
   border-right-color: var(--basket-ball-border-color);
   border-top-right-radius: var(--basket-ball-border-radious);
   border-bottom-left-radius: 0px;
+
+  margin-right: 3px;
+  margin-top: 3px;
 }
 
 .map-cell-mapFirstFloor-20 {
-  border: 1px solid rgb(210, 210, 210);
+  border-left: 1px solid;
+  border-bottom: 1px solid;
   border-left-color: var(--basket-ball-border-color);
   border-bottom-color: var(--basket-ball-border-color);
   border-bottom-left-radius: var(--basket-ball-border-radious);
   border-top-right-radius: 0px;
+
+  margin-left: 3px;
+  margin-bottom: 3px;
 }
 
 .map-cell-mapFirstFloor-21 {
-  border: 1px solid rgb(210, 210, 210);
+  border-right: 1px solid;
+  border-bottom: 1px solid;
   border-right-color: var(--basket-ball-border-color);
   border-bottom-color: var(--basket-ball-border-color);
   border-bottom-right-radius: var(--basket-ball-border-radious);
   border-top-left-radius: 0px;
+
+  margin-right: 3px;
+  margin-bottom: 3px;
 }
 
 /* Basketball Court 2F */
 .map-cell-mapSecondFloor-14 {
-  border: 1px solid rgb(210, 210, 210);
+  border-top: 1px solid;
+  border-left: 1px solid;
   border-top-color: var(--basket-ball-border-color);
   border-left-color: var(--basket-ball-border-color);
   border-top-left-radius: var(--basket-ball-border-radious);
   border-bottom-right-radius: 0px;
+
+  margin-left: 3px;
+  margin-top: 3px;
 }
 
 .map-cell-mapSecondFloor-15 {
-  border: 1px solid rgb(210, 210, 210);
+  border-top: 1px solid;
+  border-right: 1px solid;
   border-top-color: var(--basket-ball-border-color);
   border-right-color: var(--basket-ball-border-color);
   border-top-right-radius: var(--basket-ball-border-radious);
   border-bottom-left-radius: 0px;
+
+  margin-right: 3px;
+  margin-top: 3px;
 }
 
 .map-cell-mapSecondFloor-20 {
-  border: 1px solid rgb(210, 210, 210);
+  border-bottom: 1px solid;
+  border-left: 1px solid;
   border-left-color: var(--basket-ball-border-color);
   border-bottom-color: var(--basket-ball-border-color);
   border-bottom-left-radius: var(--basket-ball-border-radious);
   border-top-right-radius: 0px;
+
+  margin-left: 3px;
+  margin-bottom: 3px;
 }
 
 .map-cell-mapSecondFloor-21 {
-  border: 1px solid rgb(210, 210, 210);
+  border-bottom: 1px solid;
+  border-right: 1px solid;
   border-right-color: var(--basket-ball-border-color);
   border-bottom-color: var(--basket-ball-border-color);
   border-bottom-right-radius: var(--basket-ball-border-radious);
   border-top-left-radius: 0px;
+
+  margin-right: 3px;
+  margin-bottom: 3px;
 }

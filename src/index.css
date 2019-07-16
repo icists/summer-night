@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  min-width: 450px;
+  max-width: 530px;
 }
 
 code {
@@ -12,6 +15,6 @@ code {
     monospace;
 }
 
-.loading-mark {
-  padding-top: 2rem;
+label {
+  margin-top: .5rem;
 }

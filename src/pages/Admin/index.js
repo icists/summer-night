@@ -18,6 +18,7 @@ class NewGameBase extends React.Component {
   }
 
   createNewGame = e => {
+    if (!window.confirm("Are you sure to create a new game?")) return;
     const { cell, floor, name, type, valid } = this.state;
     const { firebase } = this.props;
 
@@ -112,11 +113,14 @@ class NewGameBase extends React.Component {
           <input type="number" className="col-4 form-control" name="cell" value={cell} onChange={this.onChange} id="new-game-cell"/>
         </div>
         <div className="row">
-          <div className="col-4">
-            <button className="btn btn-success" type="submit">
+          <div className="col">
+            <button className="btn btn-success btn-block" type="submit">
               New Game
             </button>
           </div>
+        </div>
+        <hr/>
+        <div className="row">
           <div className="col">
             { !valid ? <div className="alert alert-danger">Name! Floor is 1 or 2, and Cell is from 1 to 42.</div> : null}
           </div>
@@ -135,6 +139,10 @@ class InitializerBase extends React.Component {
   }
 
   initColors = () => {
+    if (!window.confirm("Are you sure to initialize the game?"))
+      return;
+    if (!window.confirm("Are you sure??"))
+      return;
     this.props.firebase.games().once('value', snapshot => {
       const games = snapshot.val();
       Object.keys(games).forEach(gameID => {
@@ -145,6 +153,13 @@ class InitializerBase extends React.Component {
       })
       this.props.firebase.games().set({
         ...games,
+      }).then(() => {
+        this.props.firebase.colors().set({
+          blue: { point: 0 },
+          purple: { point: 0 },
+          red: { point: 0 },
+          yellow: { point: 0 },
+        });
       }).then(() => {
         this.props.firebase.colors().set({
           blue: { point: 0 },
@@ -189,10 +204,12 @@ class ToggleVisibleBase extends React.Component {
   }
 
   toggleEndgame = () => {
-    const { visible } = this.state.visible;
-    this.props.firebase.visible().update({
-      visible: visible ? false : true,
-    });
+    if (prompt("Are you sure to start the endgame?")) {
+      const { visible } = this.state.visible;
+      this.props.firebase.visible().update({
+        visible: visible ? false : true,
+      });
+    }
   }
 
   render() {
@@ -260,7 +277,8 @@ class AdminPage extends React.Component {
           <div className="col"> <Initializer /> </div>
           <div className="col"> <ToggleVisible /> </div>
         </div>
-        <button onClick={this.doSignOut}>Sign Out</button>
+        <hr/>
+        <button className="btn btn-danger btn-block" onClick={this.doSignOut}>Sign Out</button>
       </div>
     );
   }

@@ -51,9 +51,8 @@ class SignInFormBase extends React.Component {
         </div>
         <button className="btn btn-primary btn-block" type="submit">Sign In</button>
       </form>
-      {error ? error.message : null}
       <hr/>
-      <button className="btn btn-danger btn-block" onClick={this.props.firebase.doSignOut}>Sign Out</button>
+      {error ? error.message : null}
       </React.Fragment>
     );
   }

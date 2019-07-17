@@ -1,6 +1,13 @@
 {
   "rules": {
     ".read": "true",
-    ".write": "true"
+    ".write": "auth.uid != null",
+    "games": {
+      "$gameID" : {
+        "history": {
+          ".indexOn": ["record"]
+        }
+      }
+    }
   }
 }

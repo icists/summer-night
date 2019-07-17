@@ -21,5 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+database-debug.log*
 
+summer-night-icists-ef6ce259d013.json
 /.firebase

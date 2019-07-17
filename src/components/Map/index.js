@@ -114,7 +114,8 @@ class GameMapCell extends React.Component {
       if (data.team) {
         return (
           <div
-            className={`cell map-cell-${id}-${index}`}
+            href="#"
+            className={`cell map-cell-${id}-${index} clickable`}
             data-toggle="modal"
             data-target={`#mapCellModal-${id}-${index}`}
             style={{ backgroundColor: mapColor(data)}}

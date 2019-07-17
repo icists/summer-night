@@ -160,14 +160,7 @@ class InitializerBase extends React.Component {
           red: { point: 0 },
           yellow: { point: 0 },
         });
-      }).then(() => {
-        this.props.firebase.colors().set({
-          blue: { point: 0 },
-          purple: { point: 0 },
-          red: { point: 0 },
-          yellow: { point: 0 },
-        });
-      })
+      });
     })
   }
 
@@ -204,7 +197,7 @@ class ToggleVisibleBase extends React.Component {
   }
 
   toggleEndgame = () => {
-    if (prompt("Are you sure to start the endgame?")) {
+    if (window.confirm("Are you sure to start the endgame?")) {
       const { visible } = this.state.visible;
       this.props.firebase.visible().update({
         visible: visible ? false : true,
@@ -214,7 +207,6 @@ class ToggleVisibleBase extends React.Component {
 
   render() {
     const { visible } = this.state.visible;
-    console.log(visible);
     return (
       <button className="btn btn-danger" onClick={this.toggleEndgame}>
         { visible ? <span>Endgame On</span> : <span>Endgame Off</span>}

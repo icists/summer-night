@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const GameListItem = ({ game, id }) => (
-  <li className="list-group-item" data-toggle="modal" data-target={`#gameInfoModal-${id}`}>
+  <li href="#" className="list-group-item clickable" data-toggle="modal" data-target={`#gameInfoModal-${id}`}>
     <div className="modal fade" id={`gameInfoModal-${id}`} tabIndex={-1} role="dialog" aria-labelledby="gameInfoModalLabel" aria-hidden="true">
       <div className="modal-dialog" role="document">
         <div className="modal-content">

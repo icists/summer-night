@@ -28,10 +28,10 @@ exports.updatePoint = functions.database.ref('games/{gameID}/team')
     const beforeTeam = snapshot.before.val();
     const afterTeam = snapshot.after.val();
 
-    snapshot.before.ref.parent.once('value', game => {
-      const gamePoint = game.type === 'Match' ? 2 : 1;
+    return snapshot.before.ref.parent.once('value', game => {
+      const gamePoint = game.val().type === "Match" ? 2 : 1;
       if (teamToColor(beforeTeam) !== teamToColor(afterTeam)) {
-        if (beforeTeam !== -1) {
+        if (beforeTeam !== -1 && afterTeam !== -1) {
           admin.database().ref(`colors/${teamToColor(beforeTeam)}/point`)
             .transaction(currentPoint => currentPoint - gamePoint);
         }
@@ -43,27 +43,18 @@ exports.updatePoint = functions.database.ref('games/{gameID}/team')
     });
   });
 
-exports.updateGameTeamForRecord = functions.database.ref('games/{gameID}/history')
-  .onCreate((snapshot, context) => {
-    const newLog = snapshot.val();
-    admin.database().ref(`games/${context.params.gameID}`).child('history')
-      .orderByChild('record').limitToFirst(1).on(snapshot => {
-        const bestLog = snapshot.val();
-        if (newLog.record < bestLog.record) {
-          admin.database().ref(`games/${context.params.gameID}`).update({
-            team: newLog.team
+exports.updateGameTeamForRecord = functions.database.ref('games/{gameID}/history/{logID}')
+  .onCreate(newLog => {
+    return newLog.ref.parent.parent.once('value', game => {
+      if (game.val().type !== "Record") return null;
+      game.child('history').ref.orderByChild('record').limitToFirst(1).once('value', bestLog => {
+        const bestLogKey = Object.keys(bestLog.val())[0];
+        const targetLog = bestLog.val()[bestLogKey];
+        if (targetLog.record <= newLog.val().record) {
+          game.ref.update({
+            team: targetLog.team,
           });
         }
       });
-  })
-
-exports.sanitizeTeam = functions.database.ref('games/{gameID}/team')
-  .onUpdate((snapshot, context) => {
-    const updatedTeam = snapshot.after.val();
-    if (typeof (updatedTeam) === 'string') {
-      const team = parseInt(updatedTeam, 10);
-      admin.database().ref(`games/${context.params.gameID}`).update({
-        team: team,
-      });
-    }
-  })
+    });
+  });

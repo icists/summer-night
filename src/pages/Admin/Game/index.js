@@ -2,7 +2,7 @@ import React from 'react';
 import { withFirebase } from '../../../components/Firebase';
 
 import './GameAdmin.css';
-import { teamToDisplayColor } from '../../../components/Map';
+import { teamToDisplayColor, teamToColor } from '../../../components/Map';
 import { withAuthentication, withAuthorization } from '../../../components/Session';
 import { compose } from 'recompose';
 
@@ -12,21 +12,18 @@ class GameAdminPage extends React.Component {
     this.GAME_RUNNING_INIT = {
       teamOne: undefined,
       teamTwo: undefined,
-      version: "",
+      version: "A",
       record: undefined,
     };
     this.state = {
       firebaseGameLoaded: false,
       game: {},
       running: {
-        teamOne: undefined,
-        teamTwo: undefined,
-        version: "",
-        record: undefined,
+        ...this.GAME_RUNNING_INIT
       },
       valid: {
         duplicated: false,
-        version: false,
+        version: true,
       },
     }
   }
@@ -66,9 +63,9 @@ class GameAdminPage extends React.Component {
     if (!valid.version) return;
 
     if (target.id === 'team-one-card-button-win') {
-      if (!teamOne) return;
+      /* Team 1 Win */
+      if (!teamOne) return alert("Please Enter Team 1");
       game.update({
-        team: parseInt(teamOne, 10),
         isRunning: false,
       }).then(() => {
         if (type === "Record") {
@@ -76,16 +73,19 @@ class GameAdminPage extends React.Component {
           newLog.set({
             team: parseInt(teamOne, 10),
             version: version,
-            record: record,
+            record: parseFloat(record),
           });
         }
         if (type === "PassFail") {
+          game.update({
+            team: parseInt(teamOne, 10),
+          });
           const newLog = game.child('history').push();
           newLog.set({
             team: parseInt(teamOne, 10),
             version: version,
             result: 'win',
-          })
+          });
         }
         if (type === "Match") {
           game.child('history').push().set({
@@ -94,10 +94,30 @@ class GameAdminPage extends React.Component {
             result: 'win'
           });
           game.child('history').push().set({
-            team: parseInt(teamOne, 10),
+            team: parseInt(teamTwo, 10),
             version: version,
             result: 'lose',
           });
+          game.child(`history/group/${teamToColor(teamOne).toLowerCase()}`)
+            .ref.transaction(currPoint => {
+              if (currPoint) { return currPoint + 1; }
+              else { return 1; }
+            }, (error, committed, snapshot) => {
+                snapshot.ref.parent.once('value', groupSnapshot => {
+                  let maxGroup = "";
+                  let maxPoint = 0;
+                  for (let [group, point] of Object.entries(groupSnapshot.val())) {
+                    if (point > maxPoint) {
+                      maxGroup = group;
+                      maxPoint = point;
+                    }
+                  }
+                  console.log(maxGroup, maxPoint);
+                  if (teamToColor(teamOne).toLowerCase() === maxGroup) {
+                    game.update({ team: teamOne })
+                  }
+                });
+            });
         }
       }).then(() => {
         this.setState({ running: { team: parseInt(teamOne, 10), ...this.GAME_RUNNING_INIT } });
@@ -106,16 +126,10 @@ class GameAdminPage extends React.Component {
 
 
     if (target.id === 'team-one-card-button-lose') {
+      /* Team 1 Lose */
       game.update({
         isRunning: false,
       }).then(() => {
-        if (type === "Record") {
-          game.child('history').push().set({
-            team: parseInt(teamOne, 10),
-            version: version,
-            result: 'lose',
-          })
-        }
         if (type === "PassFail") {
           game.child('history').push().set({
             team: parseInt(teamOne, 10),
@@ -130,11 +144,12 @@ class GameAdminPage extends React.Component {
     }
 
     if (target.id === 'team-two-card-button-win') {
-      if (!teamTwo) return;
+      /* Team 2 Win */
+      if (!teamOne) return alert("Please enter Team 1");
+      if (!teamTwo) return alert("Please enter Team 2");
       game.update({
-        team: parseInt(teamTwo, 10),
         isRunning: false,
-      }).then(() => { 
+      }).then(() => {
         if (type === "Match") {
           game.child('history').push().set({
             team: parseInt(teamTwo, 10),
@@ -146,8 +161,28 @@ class GameAdminPage extends React.Component {
             version: version,
             result: 'lose',
           });
-        }
-      }).then(() => {
+          game.child(`history/group/${teamToColor(teamTwo).toLowerCase()}`)
+            .ref.transaction(currPoint => {
+              if (currPoint) { return currPoint + 1; }
+              else { return 1; }
+            }, (error, committed, snapshot) => {
+              snapshot.ref.parent.once('value', groupSnapshot => {
+                let maxGroup = "";
+                let maxPoint = 0;
+                for (let [group, point] of Object.entries(groupSnapshot.val())) {
+                  if (point > maxPoint) {
+                    maxGroup = group;
+                    maxPoint = point;
+                  }
+                }
+                console.log(maxGroup, maxPoint);
+                if (teamToColor(teamTwo).toLowerCase() === maxGroup) {
+                  game.update({ team: teamTwo })
+                }
+              });
+            });
+          }
+        }).then(() => {
         this.setState({ running: { ...this.GAME_RUNNING_INIT } });
       });
     }
@@ -185,7 +220,6 @@ class GameAdminPage extends React.Component {
       }
     }), () => {
       const { version } = this.state.running;
-      const { history } = this.state.game;
       
       this.setState(prevState => ({
         valid: {
@@ -353,6 +387,7 @@ class GameAdminPage extends React.Component {
           <div className="list-group">
             {history
               ? Object.keys(history).reverse().map(historyID => {
+                if (historyID === 'group') return null;
                 const log = history[historyID];
                 return (
                   <li key={historyID} className="list-group-item d-flex justify-content-between align-items-center">

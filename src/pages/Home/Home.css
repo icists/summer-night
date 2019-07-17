@@ -8,7 +8,7 @@
   margin-right: 0.3rem;
   margin-bottom: 0.5rem;
   display: grid;
-  grid-template-columns: 4;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1;
 }
 
@@ -21,6 +21,7 @@
 }
 
 .team-score-card {
+  font-size: 0.8em;
   border-radius: 0.3rem;
 }
 

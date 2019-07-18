@@ -134,10 +134,6 @@ class NewGameBase extends React.Component {
 const NewGame = withFirebase(NewGameBase);
 
 class InitializerBase extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   initColors = () => {
     if (!window.confirm("Are you sure to initialize the game?"))
       return;

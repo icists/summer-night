@@ -1,6 +1,5 @@
 import React from 'react'
 import { compose } from 'recompose';
-import { withFirebase } from '../Firebase';
 
 import * as ROUTES from '../../pages/routes';
 import { withAuthentication } from '../Session';

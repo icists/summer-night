@@ -6,6 +6,22 @@ import { teamToDisplayColor, teamToColor } from '../../../components/Map';
 import { withAuthentication, withAuthorization } from '../../../components/Session';
 import { compose } from 'recompose';
 
+function argmaxGroup(group) {
+  const maxColors = [];
+  let maxPoint = 0;
+  for (let [color, point] of Object.entries(group)) {
+    if (point > maxPoint) {
+      maxPoint = point;
+    }
+  }
+  for (let [color, point] of Object.entries(group)) {
+    if (point === maxPoint) {
+      maxColors.push(color);
+    }
+  }
+  return maxColors;
+}
+
 class GameAdminPage extends React.Component {
   constructor(props) {
     super(props);
@@ -54,7 +70,7 @@ class GameAdminPage extends React.Component {
   finishGame = e => {
     const { gameID } = this.props.match.params;
     const { valid } = this.state;
-    const { type } = this.state.game;
+    const { type, history } = this.state.game;
     const { teamOne, teamTwo, version, record } = this.state.running;
     const target = e.currentTarget;
 
@@ -64,6 +80,7 @@ class GameAdminPage extends React.Component {
 
     if (target.id === 'team-one-card-button-win') {
       /* Team 1 Win */
+      if (!window.confirm("Are you sure?")) return;
       if (!teamOne) return alert("Please Enter Team 1");
       game.update({
         isRunning: false,
@@ -88,6 +105,12 @@ class GameAdminPage extends React.Component {
           });
         }
         if (type === "Match") {
+          // The initial win
+          if (!history) {
+            game.update({
+              team: parseInt(teamOne, 10),
+            })
+          }
           game.child('history').push().set({
             team: parseInt(teamOne, 10),
             version: version,
@@ -102,21 +125,18 @@ class GameAdminPage extends React.Component {
             .ref.transaction(currPoint => {
               if (currPoint) { return currPoint + 1; }
               else { return 1; }
-            }, (error, committed, snapshot) => {
-                snapshot.ref.parent.once('value', groupSnapshot => {
-                  let maxGroup = "";
-                  let maxPoint = 0;
-                  for (let [group, point] of Object.entries(groupSnapshot.val())) {
-                    if (point > maxPoint) {
-                      maxGroup = group;
-                      maxPoint = point;
+            }, function (e, c, snapshot) {
+                snapshot.ref.parent.once('value', s => {
+                  const g = argmaxGroup(s.val());
+                  const t = teamToColor(teamOne).toLowerCase();
+                  if (g.includes(t)) {
+                    if (g.length === 1) {
+                      game.update({
+                        team: parseInt(teamOne, 10)
+                      })
                     }
                   }
-                  console.log(maxGroup, maxPoint);
-                  if (teamToColor(teamOne).toLowerCase() === maxGroup) {
-                    game.update({ team: teamOne })
-                  }
-                });
+                })
             });
         }
       }).then(() => {
@@ -126,6 +146,7 @@ class GameAdminPage extends React.Component {
 
 
     if (target.id === 'team-one-card-button-lose') {
+      if (!window.confirm("Are you sure?")) return;
       /* Team 1 Lose */
       game.update({
         isRunning: false,
@@ -144,6 +165,7 @@ class GameAdminPage extends React.Component {
     }
 
     if (target.id === 'team-two-card-button-win') {
+      if (!window.confirm("Are you sure?")) return;
       /* Team 2 Win */
       if (!teamOne) return alert("Please enter Team 1");
       if (!teamTwo) return alert("Please enter Team 2");
@@ -151,6 +173,12 @@ class GameAdminPage extends React.Component {
         isRunning: false,
       }).then(() => {
         if (type === "Match") {
+          if (!history) {
+            // The initial win
+            game.update({
+              team: parseInt(teamTwo, 10),
+            })
+          }
           game.child('history').push().set({
             team: parseInt(teamTwo, 10),
             version: version,
@@ -165,24 +193,26 @@ class GameAdminPage extends React.Component {
             .ref.transaction(currPoint => {
               if (currPoint) { return currPoint + 1; }
               else { return 1; }
-            }, (error, committed, snapshot) => {
-              snapshot.ref.parent.once('value', groupSnapshot => {
-                let maxGroup = "";
-                let maxPoint = 0;
-                for (let [group, point] of Object.entries(groupSnapshot.val())) {
-                  if (point > maxPoint) {
-                    maxGroup = group;
-                    maxPoint = point;
+            }, function (e, c, snapshot) {
+                snapshot.ref.parent.once('value', s => {
+                  const g = argmaxGroup(s.val());
+                  const t = teamToColor(teamTwo).toLowerCase();
+                  if (g.includes(t)) {
+                    if (g.length === 1) {
+                      game.update({
+                        team: parseInt(teamTwo, 10)
+                      })
+                    }
                   }
-                }
-                console.log(maxGroup, maxPoint);
-                if (teamToColor(teamTwo).toLowerCase() === maxGroup) {
-                  game.update({ team: teamTwo })
-                }
-              });
+              })
             });
-          }
-        }).then(() => {
+        }
+      }).then(() => {
+        console.log(history.group); // Before points transacted
+        console.log(
+          argmaxGroup(history.group)
+        );
+        teamToColor(teamTwo).toLowerCase();
         this.setState({ running: { ...this.GAME_RUNNING_INIT } });
       });
     }
@@ -382,6 +412,21 @@ class GameAdminPage extends React.Component {
         <button className="btn btn-danger btn-block" disabled={!game.isRunning} onClick={this.abortGame}>Abort Game</button>
         <hr/>
 
+        { game.type === "Match"
+          ? <>
+            {history ? (history.group ?
+              <>
+                <ul className="list-group list-group-horizontal">
+                  <li className="list-group-item">Red: {history.group.red ? history.group.red : 0}</li>
+                  <li className="list-group-item">Yellow: {history.group.yellow ? history.group.yellow : 0}</li>
+                  <li className="list-group-item">Blue: {history.group.blue ? history.group.blue : 0}</li>
+                  <li className="list-group-item">Purple: {history.group.purple ? history.group.purple : 0}</li>
+                </ul>
+                <hr />
+              </>
+              : null) : null }
+              </>
+          : null}
         <div className="game-admin-history">
           <h5>History</h5>
           <div className="list-group">

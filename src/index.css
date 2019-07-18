@@ -19,6 +19,18 @@ label {
   margin-top: .5rem;
 }
 
+.modal-backdrop {
+  z-index: 5;
+}
+
+.modal-content {
+  z-index: 1040;
+}
+
 .clickable {
   cursor: pointer;
+}
+
+.spinner-border {
+  z-index: 3;
 }

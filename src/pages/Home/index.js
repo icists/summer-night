@@ -56,17 +56,22 @@ class HomePage extends React.Component {
         <div className="score-board">
           {firebaseColorsLoaded
             ? <React.Fragment><div className="score-board-team-cards">
-                <TeamCard teamNumber={1} teamName="Red" point={"?"} />
-                <TeamCard teamNumber={2} teamName="Yellow" point={"?"} />
-                <TeamCard teamNumber={3} teamName="Blue" point={"?"} />
-                <TeamCard teamNumber={4} teamName="Purple" point={"?"} />
+                <TeamCard teamNumber={1} teamName="Red" point="?" />
+                <TeamCard teamNumber={2} teamName="Yellow" point="?" />
+                <TeamCard teamNumber={3} teamName="Blue" point="?" />
+                <TeamCard teamNumber={4} teamName="Purple" point="?" />
               </div>
               <div className="home-page-game-section">
-                <div className="home-page-game-map">
-                  <img className="home-page-game-end-logo" src={Logo} alt="ICISTS logo"/>
-                  <p>
-                    The summer night ends soon! Please hurry to catch the flags!
-                  </p>
+                <div className="home-page-game-map text-center">
+                  <h3> The summer night ends soon </h3>
+                  <div className="card text-center">
+                    <div className="card-body">
+                      <img className="home-page-game-end-logo" src={Logo} alt="ICISTS logo"/>
+                    </div>
+                  </div>
+                  <h6 style={{padding: "1rem"}}>
+                     Please hurry to catch the flags!
+                  </h6>
                 </div>
                 <hr />
                 <div className="home-page-game-list"></div>

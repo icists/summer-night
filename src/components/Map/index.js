@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './GameMap.css';
-import { LavatoryIcon, ElevatorIcon, DoorIcon, StairsIcon } from '../../assets/icons';
+import { LavatoryIcon, ElevatorIcon, DoorIcon, StairsIcon, RecordGameIcon, TeamGameIcon, MatchGameIcon } from '../../assets/icons';
 
 export function translateGamesToMap(games) {
   let map = { 1: {}, 2: {}};
@@ -47,41 +47,22 @@ export function teamToDisplayColor(team) {
   if (team % 4 === 0)
     return '#FFF7B0';
   if (team % 4 === 1)
-    return '#E63F5C';
+    return '#EE4E00';
   if (team % 4 === 2)
-    return '#FFA1FB';
+    return '#AF4684';
   if (team % 4 === 3)
     return '#6EC0FF';
 }
 
 function mapColor(cell) {
-  if (!cell) {
-    return 'white';
-  }
+  if (!cell) { return 'white'; }
+  if (cell.facility) { return 'rgb(240, 240, 240)'; }
 
-  if (cell.facility) {
-    return 'rgb(240, 240, 240)';
-  }
-
-  if (teamToColor(cell.team) === 'Uncaptured') {
-    return 'rgb(160, 160, 160)';
-  }
-
-  if (teamToColor(cell.team) === 'Red') {
-    return '#E63F5C';
-  }
-
-  if (teamToColor(cell.team) === 'Yellow') {
-    return '#FFF7B0';
-  }
-
-  if (teamToColor(cell.team) === 'Blue') {
-    return '#6EC0FF';
-  }
-
-  if (teamToColor(cell.team) === 'Purple') {
-    return '#FFA1FB';
-  }
+  if (teamToColor(cell.team) === 'Uncaptured') { return 'rgb(160, 160, 160)'; }
+  if (teamToColor(cell.team) === 'Red') { return '#EE4E00'; }
+  if (teamToColor(cell.team) === 'Yellow') { return '#FFF7B0'; }
+  if (teamToColor(cell.team) === 'Blue') { return '#6EC0FF'; }
+  if (teamToColor(cell.team) === 'Purple') { return '#AF4684'; }
 }
 
 function facilityIcon(facility) {
@@ -96,6 +77,26 @@ function facilityIcon(facility) {
 
   if (facility === 'stairs')
     return <img className="facility-icon" src={StairsIcon} alt="Stairs"/>;
+}
+
+export function displayGameType(type) {
+  if (type === "Match") return "Team vs. Team";
+  if (type === "Record") return "Team Recording";
+  if (type === "PassFail") return "Team Game";
+}
+
+export function displayTeam(team) {
+  if (team === -1) return (<span><b>Uncaptured Yet!</b></span>);
+  return team;
+}
+
+function displayGameTypeIcon(game) {
+  if (game.type === "Match")
+    return <img className="game-type-icon" src={MatchGameIcon} alt="Lavatory" />;
+  if (game.type === "Record")
+    return <img className="game-type-icon" src={RecordGameIcon} alt="Lavatory" />;
+  if (game.type === "PassFail")
+    return <img className="game-type-icon" src={TeamGameIcon} alt="Lavatory" />;
 }
 
 class GameMapCell extends React.Component {
@@ -118,6 +119,7 @@ class GameMapCell extends React.Component {
             className={`cell map-cell-${id}-${index} clickable`}
             data-toggle="modal"
             data-target={`#mapCellModal-${id}-${index}`}
+            data-backdrop={false}
             style={{ backgroundColor: mapColor(data)}}
           >
             {data.isRunning
@@ -127,12 +129,16 @@ class GameMapCell extends React.Component {
                 </div>
               </div>
               : null}
-            <div className="modal fade" id={`mapCellModal-${id}-${index}`} tabIndex="-1" role="dialog" aria-labelledby="mapCellModalLabel" aria-hidden={true}>
+            {index !== 38 ? displayGameTypeIcon(data) : null}
+            {/* Modal */}
+            <div className="modal fade" id={`mapCellModal-${id}-${index}`} tabIndex={-1} role="dialog" aria-labelledby="mapCellModalLabel" aria-hidden={true}>
               <div className="modal-dialog modal-dialog-centered" role="document">
                 <div className="modal-content">
                   <div className="modal-header">
                     <h5 className="modal-title" id="mapCellModalLabel">
-                      {data.name} {data.isRunning ? <span className="badge badge-info">Running</span> : <span className="badge badge-secondary">Free to go</span>}
+                      {data.name}
+                      {data.isRunning ? <span className="badge badge-info small-tag">Running</span> : <span className="badge badge-secondary small-tag">Free to go</span>}
+                      {data.isWaiting ? <span className="badge badge-info small-tag">Waiting</span> : null}
                     </h5>
                     <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -140,11 +146,17 @@ class GameMapCell extends React.Component {
                   </div>
                   <div className="modal-body">
                     <div className="game-small-info">
-                      <ul>
-                        <li> Floor: {data.location.floor} </li>
-                        <li> Type: {data.type} </li>
-                        <li> Rules: {data.rules} </li>
-                        <li> Team: {data.team} </li>
+                      <ul className="list-group">
+                        <li className="list-group-item">
+                          <h5>Type</h5>
+                          {displayGameType(data.type)}
+                          <footer className="blockquote-footer">Team Vs. Team / Team Recording / Team Game</footer>
+                        </li>
+                        <li className="list-group-item">
+                          <h5>Team</h5>
+                          {displayTeam(data.team)}
+                          <footer className="blockquote-footer">Which team is capturing this game?</footer>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -153,7 +165,7 @@ class GameMapCell extends React.Component {
                   </div>
                 </div>
               </div>
-              </div>
+            </div>
           </div>
         );
       }
@@ -165,12 +177,13 @@ class GameMapCell extends React.Component {
     }
   }
 } 
-  const GameMap = ({ id, data }) => (
-    <div className="game-map">
-      {[...(new Array(42)).keys()].map((v, index) => (
-        <GameMapCell key={id+(index+1)} id={id} index={index+1} data={data[index+1]} />
-      ))}
-    </div>
-  );
+
+const GameMap = ({ id, data }) => (
+  <div className="game-map">
+    {[...(new Array(42)).keys()].map((v, index) => (
+      <GameMapCell key={id + (index + 1)} id={id} index={index + 1} data={(index + 1) !== 38 ? data[index + 1] : data[32]} />
+    ))}
+  </div>
+);
 
 export default GameMap;

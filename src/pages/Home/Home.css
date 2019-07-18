@@ -4,8 +4,9 @@
 }
 
 .score-board-team-cards {
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
+  margin-top: 0.9rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
   margin-bottom: 0.5rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -37,7 +38,7 @@
 }
 
 #team-1-score-card {
-  background-color: #E63F5C;
+  background-color: #EE4E00;
 }
 #team-2-score-card {
   background-color: #FFF7B0;
@@ -46,7 +47,7 @@
   background-color: #6EC0FF;
 }
 #team-4-score-card {
-  background-color: #FFA1FB;
+  background-color: #AF4684;
 }
 
 .home-page-game-end-logo {

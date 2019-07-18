@@ -225,10 +225,7 @@ class GameAdminPage extends React.Component {
     });
     this.setState({
       running: {
-        teamOne: undefined,
-        teamTwo: undefined,
-        version: "",
-        record: undefined,
+        ...this.GAME_RUNNING_INIT,
       }
     });
   }
@@ -412,23 +409,29 @@ class GameAdminPage extends React.Component {
         <button className="btn btn-danger btn-block" disabled={!game.isRunning} onClick={this.abortGame}>Abort Game</button>
         <hr/>
 
-        { game.type === "Match"
-          ? <>
-            {history ? (history.group ?
-              <>
-                <ul className="list-group list-group-horizontal">
-                  <li className="list-group-item">Red: {history.group.red ? history.group.red : 0}</li>
-                  <li className="list-group-item">Yellow: {history.group.yellow ? history.group.yellow : 0}</li>
-                  <li className="list-group-item">Blue: {history.group.blue ? history.group.blue : 0}</li>
-                  <li className="list-group-item">Purple: {history.group.purple ? history.group.purple : 0}</li>
-                </ul>
+        <div className="game-admin-history text-center">
+          <h4 style={{ marginBottom: "1rem" }}>History</h4>
+          { game.type === "Match"
+            ? <>
+              {history ? (history.group ?
+                <>
+                <div className="container d-flex justify-content-center align-items-center">
+                  <div className="row">
+                    <div className="col">
+                      <ul className="list-group list-group-horizontal">
+                        <li className="list-group-item text-center"><h6>Red</h6> {history.group.red ? history.group.red : 0}</li>
+                        <li className="list-group-item text-center"><h6>Yellow</h6> {history.group.yellow ? history.group.yellow : 0}</li>
+                        <li className="list-group-item text-center"><h6>Blue</h6> {history.group.blue ? history.group.blue : 0}</li>
+                        <li className="list-group-item text-center"><h6>Purple</h6> {history.group.purple ? history.group.purple : 0}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
                 <hr />
-              </>
-              : null) : null }
-              </>
-          : null}
-        <div className="game-admin-history">
-          <h5>History</h5>
+                </>
+                : null) : null }
+                </>
+            : null}
           <div className="list-group">
             {history
               ? Object.keys(history).reverse().map(historyID => {

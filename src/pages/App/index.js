@@ -30,7 +30,9 @@ function App() {
           </Switch>
         </div>
       <div className="page-footer">
-        Bongjun Jang, ICISTS Division of Tech & Design
+        <p>Bongjun Jang, ICISTS Division of Tech & Design</p>
+        <p>Icon 1: Created by Oksana Latysheva from Noun Project</p>
+        <p>Icon 2: Created by Soomin Kang, ICISTS Division of Tech & Design</p>
       </div>
       </HashRouter>
     </div>

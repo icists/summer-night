@@ -1,11 +1,13 @@
 .game-map {
-  --basket-ball-border-radious: 25px;
+  --basket-ball-border-size: 0.2rem;
+  --basket-ball-border-radious: 1.8rem;
   --basket-ball-border-color: rgb(100, 100, 100);
   display: grid;
   background-color: rgb(250, 250, 250);
   padding: 1rem;
-  border: 1px solid rgb(180, 180, 180);
-  border-radius: 20px;
+  margin: 0.5rem;
+  border: 0.05rem solid rgb(180, 180, 180);
+  border-radius: 1.5rem;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(7, 3.5rem);
 }
@@ -16,9 +18,9 @@
   align-content: center;
   align-items: center;
   text-align: center;
-  margin: 1px;
+  margin: 0.05rem;
   padding: 0.1rem;
-  border-radius: 5px 5px;
+  border-radius: 0.5rem 0.5rem;
 }
 
 .facility-icon {
@@ -26,121 +28,268 @@
   max-height: 80%;
 }
 
+.game-type-icon {
+  max-width: 75%;
+  max-height: 75%;
+  z-index: 1;
+}
+
 .cell:hover {
   background-color: rgb(200, 200, 200);
 }
 
 /* Lavatory */
-.map-cell-mapFirstFloor-2 { border: 1px solid rgb(100, 100, 100); }
-.map-cell-mapSecondFloor-12 { border: 1px solid rgb(100, 100, 100); }
+.map-cell-mapFirstFloor-2 { border: 0.05rem solid rgb(100, 100, 100); }
+.map-cell-mapSecondFloor-12 { border: 0.05rem solid rgb(100, 100, 100); }
 
 /* EV */
-.map-cell-mapFirstFloor-4 { border: 1px solid rgb(100, 100, 100); }
-.map-cell-mapSecondFloor-4 { border: 1px solid rgb(100, 100, 100); }
+.map-cell-mapFirstFloor-4 { border: 0.05rem solid rgb(100, 100, 100); }
+.map-cell-mapSecondFloor-4 { border: 0.05rem solid rgb(100, 100, 100); }
 
 /* Stairs */
-.map-cell-mapFirstFloor-25 { border: 1px solid rgb(100, 100, 100); }
-.map-cell-mapSecondFloor-25 { border: 1px solid rgb(100, 100, 100); }
-.map-cell-mapFirstFloor-5 { border: 1px solid rgb(100, 100, 100); }
-.map-cell-mapSecondFloor-5 { border: 1px solid rgb(100, 100, 100); }
+.map-cell-mapFirstFloor-25 { border: 0.05rem solid rgb(100, 100, 100); }
+.map-cell-mapSecondFloor-25 { border: 0.05rem solid rgb(100, 100, 100); }
+.map-cell-mapFirstFloor-5 { border: 0.05rem solid rgb(100, 100, 100); }
+.map-cell-mapSecondFloor-5 { border: 0.05rem solid rgb(100, 100, 100); }
 
 /* Door */
-.map-cell-mapSecondFloor-3 { border: 1px solid rgb(100, 100, 100); }
+.map-cell-mapSecondFloor-3 { border: 0.05rem solid rgb(100, 100, 100); }
 
 /* Basketball Court 1F */
 .map-cell-mapFirstFloor-14 {
-  border-top: 1px solid;
-  border-left: 1px solid;
+  border-top: var(--basket-ball-border-size) solid;
+  border-left: var(--basket-ball-border-size) solid;
   border-top-color: var(--basket-ball-border-color);
   border-left-color: var(--basket-ball-border-color);
   border-top-left-radius: var(--basket-ball-border-radious);
+  border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 
-  margin-left: 3px;
-  margin-top: 3px;
+  margin-left: 0.2rem;
+  margin-top: 0.2rem;
 }
 
 .map-cell-mapFirstFloor-15 {
-  border-top: 1px solid;
-  border-right: 1px solid;
+  border-top: var(--basket-ball-border-size) solid;
+  border-right: var(--basket-ball-border-size) solid;
   border-top-color: var(--basket-ball-border-color);
   border-right-color: var(--basket-ball-border-color);
   border-top-right-radius: var(--basket-ball-border-radious);
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
 
-  margin-right: 3px;
-  margin-top: 3px;
+  margin-right: 0.2rem;
+  margin-top: 0.2rem;
 }
 
 .map-cell-mapFirstFloor-20 {
-  border-left: 1px solid;
-  border-bottom: 1px solid;
+  border-left: var(--basket-ball-border-size) solid;
+  border-bottom: var(--basket-ball-border-size) solid;
   border-left-color: var(--basket-ball-border-color);
   border-bottom-color: var(--basket-ball-border-color);
   border-bottom-left-radius: var(--basket-ball-border-radious);
+  border-bottom-right-radius: 0px;
   border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
 
-  margin-left: 3px;
-  margin-bottom: 3px;
+  margin-left: 0.2rem;
+  margin-bottom: 0.2rem;
 }
 
 .map-cell-mapFirstFloor-21 {
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+  border-right: var(--basket-ball-border-size) solid;
+  border-bottom: var(--basket-ball-border-size) solid;
   border-right-color: var(--basket-ball-border-color);
   border-bottom-color: var(--basket-ball-border-color);
   border-bottom-right-radius: var(--basket-ball-border-radious);
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
   border-top-left-radius: 0px;
 
-  margin-right: 3px;
-  margin-bottom: 3px;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
 }
 
 /* Basketball Court 2F */
 .map-cell-mapSecondFloor-14 {
-  border-top: 1px solid;
-  border-left: 1px solid;
+  border-top: var(--basket-ball-border-size) solid;
+  border-left: var(--basket-ball-border-size) solid;
   border-top-color: var(--basket-ball-border-color);
   border-left-color: var(--basket-ball-border-color);
   border-top-left-radius: var(--basket-ball-border-radious);
+  border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 
-  margin-left: 3px;
-  margin-top: 3px;
+  margin-left: 0.2rem;
+  margin-top: 0.2rem;
 }
 
 .map-cell-mapSecondFloor-15 {
-  border-top: 1px solid;
-  border-right: 1px solid;
+  border-top: var(--basket-ball-border-size) solid;
+  border-right: var(--basket-ball-border-size) solid;
   border-top-color: var(--basket-ball-border-color);
   border-right-color: var(--basket-ball-border-color);
   border-top-right-radius: var(--basket-ball-border-radious);
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
 
-  margin-right: 3px;
-  margin-top: 3px;
+  margin-right: 0.2rem;
+  margin-top: 0.2rem;
 }
 
 .map-cell-mapSecondFloor-20 {
-  border-bottom: 1px solid;
-  border-left: 1px solid;
+  border-left: var(--basket-ball-border-size) solid;
+  border-bottom: var(--basket-ball-border-size) solid;
   border-left-color: var(--basket-ball-border-color);
   border-bottom-color: var(--basket-ball-border-color);
   border-bottom-left-radius: var(--basket-ball-border-radious);
+  border-bottom-right-radius: 0px;
   border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
 
-  margin-left: 3px;
-  margin-bottom: 3px;
+  margin-left: 0.2rem;
+  margin-bottom: 0.2rem;
 }
 
 .map-cell-mapSecondFloor-21 {
-  border-bottom: 1px solid;
-  border-right: 1px solid;
+  border-right: var(--basket-ball-border-size) solid;
+  border-bottom: var(--basket-ball-border-size) solid;
   border-right-color: var(--basket-ball-border-color);
   border-bottom-color: var(--basket-ball-border-color);
   border-bottom-right-radius: var(--basket-ball-border-radious);
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
   border-top-left-radius: 0px;
 
-  margin-right: 3px;
-  margin-bottom: 3px;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+
+/* 1F Rooms */
+
+.map-cell-mapFirstFloor-32 {
+  border-top: 0.05rem solid;
+  border-left: 0.05rem solid;
+  border-bottom: 0.05rem solid;
+  border-top-color: var(--basket-ball-border-color);
+  border-left-color: var(--basket-ball-border-color);
+  border-bottom-color: var(--basket-ball-border-color); 
+  border-top-left-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 0px;
+
+  height: 6.9rem;
+}
+
+.map-cell-mapFirstFloor-33 {
+  border-top: 0.05rem solid;
+  border-right: 0.05rem solid;
+  border-top-color: var(--basket-ball-border-color);
+  border-right-color: var(--basket-ball-border-color);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.map-cell-mapFirstFloor-38 {
+  height: 0rem;
+  padding: 0px;
+  margin: 0px;
+  z-index: -1;
+}
+
+.map-cell-mapFirstFloor-39 {
+  border-bottom: 0.05rem solid;
+  border-right: 0.05rem solid;
+  border-bottom-color: var(--basket-ball-border-color);
+  border-left-color: var(--basket-ball-border-color);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+/* Room */
+.map-cell-mapFirstFloor-6 {
+  border: 1px solid;
+  border-bottom: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.map-cell-mapFirstFloor-12 {
+  border: 1px solid;
+  border-top: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+/* Room */
+.map-cell-mapFirstFloor-30 {
+  border: 1px solid;
+  border-bottom: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.map-cell-mapFirstFloor-36 {
+  border: 1px solid;
+  border-top: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+
+/* Room */
+.map-cell-mapFirstFloor-42 {
+  border: 1px solid;
+}
+
+/* Room */
+.map-cell-mapFirstFloor-16 {
+  border: 1px solid;
+}
+
+/* Room */
+.map-cell-mapFirstFloor-22 {
+  border: 1px solid;
+}
+
+/* 2F Rooms */
+
+.map-cell-mapSecondFloor-24 {
+  border-right: 1px solid;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.map-cell-mapSecondFloor-30 {
+  border-right: 1px solid;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.map-cell-mapSecondFloor-36 {
+  border-right: 1px solid;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.map-cell-mapSecondFloor-42 {
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.map-cell-mapSecondFloor-37 {
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }

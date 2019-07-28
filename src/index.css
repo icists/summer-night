@@ -30,7 +30,3 @@ label {
 .clickable {
   cursor: pointer;
 }
-
-.spinner-border {
-  z-index: 3;
-}

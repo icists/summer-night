@@ -128,8 +128,7 @@ class GameMapCell extends React.Component {
                     <span className="sr-only">Loading...</span>
                 </div>
               </div>
-              : null}
-            {index !== 38 ? displayGameTypeIcon(data) : null}
+              : displayGameTypeIcon(data)}
             {/* Modal */}
             <div className="modal fade" id={`mapCellModal-${id}-${index}`} tabIndex={-1} role="dialog" aria-labelledby="mapCellModalLabel" aria-hidden={true}>
               <div className="modal-dialog modal-dialog-centered" role="document">
@@ -156,6 +155,10 @@ class GameMapCell extends React.Component {
                           <h5>Team</h5>
                           {displayTeam(data.team)}
                           <footer className="blockquote-footer">Which team is capturing this game?</footer>
+                        </li>
+                        <li className="list-group-item">
+                          <h5>Introduction</h5>
+                          {data.intro}
                         </li>
                       </ul>
                     </div>

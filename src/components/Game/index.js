@@ -32,6 +32,10 @@ export const GameListItem = ({ game, id }) => (
                     {displayTeam(game.team)}
                     <footer className="blockquote-footer">Which team is capturing this game?</footer>
                   </li>
+                  <li className="list-group-item">
+                    <h5>Introduction</h5>
+                    {game.intro}
+                  </li>
                 </ul>
             </div>
           </div>

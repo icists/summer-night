@@ -31,6 +31,7 @@
 .game-type-icon {
   max-width: 75%;
   max-height: 75%;
+  position: relative;
   z-index: 1;
 }
 
@@ -291,5 +292,11 @@
   border-left: 1px solid;
   border-bottom: 1px solid;
   border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.map-cell-mapSecondFloor-39 {
+  border-bottom: 1px solid;
+  border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }

@@ -411,6 +411,18 @@ class GameAdminPage extends React.Component {
 
         <div className="game-admin-history text-center">
           <h4 style={{ marginBottom: "1rem" }}>History</h4>
+          {game.type === "Record"
+            ?
+            <>
+            <div className="card">
+              <div className="card-body">
+                <h6>Leading Team</h6>
+                {game.team === -1 ? "Uncaptured yet" : game.team}
+              </div>
+            </div>
+            <hr/>
+            </>
+            : null}
           { game.type === "Match"
             ? <>
               {history ? (history.group ?

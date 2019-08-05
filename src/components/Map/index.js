@@ -80,9 +80,9 @@ function facilityIcon(facility) {
 }
 
 export function displayGameType(type) {
-  if (type === "Match") return "Team vs. Team";
-  if (type === "Record") return "Team Recording";
-  if (type === "PassFail") return "Team Game";
+  if (type === "Match") return "Team Battle Game";
+  if (type === "Record") return "Team Record Game";
+  if (type === "PassFail") return "Team Mission Game";
 }
 
 export function displayTeam(team) {
@@ -149,7 +149,7 @@ class GameMapCell extends React.Component {
                         <li className="list-group-item">
                           <h5>Type</h5>
                           {displayGameType(data.type)}
-                          <footer className="blockquote-footer">Team Vs. Team / Team Recording / Team Game</footer>
+                          <footer className="blockquote-footer">Team Battle Game / Team Record Game / Team Mission Game</footer>
                         </li>
                         <li className="list-group-item">
                           <h5>Team</h5>

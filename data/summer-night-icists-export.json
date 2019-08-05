@@ -1,0 +1,1561 @@
+{
+  "colors" : {
+    "blue" : {
+      "point" : 4
+    },
+    "purple" : {
+      "point" : 7
+    },
+    "red" : {
+      "point" : 6
+    },
+    "yellow" : {
+      "point" : 7
+    }
+  },
+  "games" : {
+    "-LjPWxNfQpXbpQwZ7LyR" : {
+      "history" : {
+        "-Ll1gahpAxUw_rEoAhM5" : {
+          "record" : 2.29,
+          "team" : 21,
+          "version" : "A"
+        },
+        "-Ll1iZ_u1EbcryNmnQW1" : {
+          "record" : 4.04,
+          "team" : 21,
+          "version" : "A"
+        },
+        "-Ll1lLzI3gBaHjfEIxum" : {
+          "record" : 1.48,
+          "team" : 10,
+          "version" : "A"
+        },
+        "-Ll1mN7ByAj-Ib4R0evI" : {
+          "record" : 1.37,
+          "team" : 20,
+          "version" : "A"
+        },
+        "-Ll1nstwGupkxN1iaxuB" : {
+          "record" : 3.01,
+          "team" : 16,
+          "version" : "A"
+        },
+        "-Ll1rhPIzoBfKN0lSzOT" : {
+          "record" : 3.04,
+          "team" : 14,
+          "version" : "A"
+        },
+        "-Ll1tBpC5m9glQcTrVmi" : {
+          "record" : 2.36,
+          "team" : 26,
+          "version" : "A"
+        },
+        "-Ll1uLjBSAqTly2Vyj7E" : {
+          "record" : 2,
+          "team" : 27,
+          "version" : "A"
+        },
+        "-Ll1wPP2mLTIlvE2Yas-" : {
+          "record" : 2.01,
+          "team" : 18,
+          "version" : "A"
+        }
+      },
+      "intro" : "One member of your team will be the snack thrower. Rest of the team has to snatch the snack, thrown by the snack thrower. The time until all of the members, except the thrower, to succeed in snatching a snack will be recorded.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : 42,
+        "floor" : 1
+      },
+      "name" : "Throw & Bite",
+      "team" : 20,
+      "type" : "Record"
+    },
+    "-LjPZHi2NB495MEQxxeY" : {
+      "history" : {
+        "-Ll1dyknwR-bKlNdgPs_" : {
+          "result" : "win",
+          "team" : 12,
+          "version" : "A"
+        },
+        "-Ll1dykvdFwgxH-JFjLk" : {
+          "result" : "lose",
+          "team" : 5,
+          "version" : "A"
+        },
+        "-Ll1fa11DfkZCDZVLgZP" : {
+          "result" : "win",
+          "team" : 18,
+          "version" : "A"
+        },
+        "-Ll1fa1IybkD9s19ahfL" : {
+          "result" : "lose",
+          "team" : 19,
+          "version" : "A"
+        },
+        "-Ll1iQOGToMf-HmKa82Q" : {
+          "result" : "win",
+          "team" : 1,
+          "version" : "A"
+        },
+        "-Ll1iQOZBh1gDhIAmbMQ" : {
+          "result" : "lose",
+          "team" : 14,
+          "version" : "A"
+        },
+        "-Ll1k1RRc2otJZFk09bN" : {
+          "result" : "win",
+          "team" : 17,
+          "version" : "A"
+        },
+        "-Ll1k1RWyVX1F67XoX2k" : {
+          "result" : "lose",
+          "team" : 24,
+          "version" : "A"
+        },
+        "-Ll1o8XBws_WdtYlJVz5" : {
+          "result" : "win",
+          "team" : 4,
+          "version" : "A"
+        },
+        "-Ll1o8XWr2V3i846K_RW" : {
+          "result" : "lose",
+          "team" : 26,
+          "version" : "A"
+        },
+        "-Ll1rHtR-1n8L2Ymadun" : {
+          "result" : "win",
+          "team" : 27,
+          "version" : "A"
+        },
+        "-Ll1rHtWmBShdpksfdW_" : {
+          "result" : "lose",
+          "team" : 3,
+          "version" : "A"
+        },
+        "-Ll1sZpxy5LTLcSQnMyW" : {
+          "result" : "win",
+          "team" : 6,
+          "version" : "A"
+        },
+        "-Ll1sZq0sQtseXo5OqnI" : {
+          "result" : "lose",
+          "team" : 8,
+          "version" : "A"
+        },
+        "-Ll1vuN5QoY6q5zN_bsn" : {
+          "result" : "win",
+          "team" : 7,
+          "version" : "A"
+        },
+        "-Ll1vuNCFG6bUM_Q3cPB" : {
+          "result" : "lose",
+          "team" : 28,
+          "version" : "A"
+        },
+        "-Ll1xupTLzhWy6V02ij1" : {
+          "result" : "win",
+          "team" : 1,
+          "version" : "A"
+        },
+        "-Ll1xuqCZKgQw5ZO2lvY" : {
+          "result" : "lose",
+          "team" : 23,
+          "version" : "A"
+        },
+        "group" : {
+          "blue" : 2,
+          "purple" : 2,
+          "red" : 3,
+          "yellow" : 2
+        }
+      },
+      "intro" : "At your team’s turn, everyone will drink a seemingly same cup of drink. Only one of the drinks is the yucky one. Try to keep a pokerface, or implement some other strategy, to deter the other team from guessing who drank the yucky drink. When your team’s turn is over, vice versa; try to guess which person from the other team drank the yucky drink!",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "36",
+        "floor" : 1
+      },
+      "name" : "Pokerface",
+      "team" : 1,
+      "type" : "Match"
+    },
+    "-LjPZLaNp8ig7UB_typr" : {
+      "history" : {
+        "-Ll1e6YWjSZiZgtz1kF2" : {
+          "result" : "win",
+          "team" : 18,
+          "version" : "A"
+        },
+        "-Ll1e6ZBx7XmBHsWqh8H" : {
+          "result" : "lose",
+          "team" : 19,
+          "version" : "A"
+        },
+        "-Ll1fPuGU-fHReBo9j_6" : {
+          "result" : "win",
+          "team" : 6,
+          "version" : "A"
+        },
+        "-Ll1fPulfxRiTgjW7YuW" : {
+          "result" : "lose",
+          "team" : 12,
+          "version" : "A"
+        },
+        "-Ll1iY0jEmFAmrODIDRh" : {
+          "result" : "win",
+          "team" : 8,
+          "version" : "A"
+        },
+        "-Ll1iY0rvREfrQGB5KBv" : {
+          "result" : "lose",
+          "team" : 17,
+          "version" : "A"
+        },
+        "-Ll1k2sWjHzSebMlYFfP" : {
+          "result" : "win",
+          "team" : 1,
+          "version" : "A"
+        },
+        "-Ll1k2sdhpIm2vqF4kXK" : {
+          "result" : "lose",
+          "team" : 14,
+          "version" : "A"
+        },
+        "-Ll1lP_b-0Q8cG9qKHYe" : {
+          "result" : "win",
+          "team" : 24,
+          "version" : "A"
+        },
+        "-Ll1lP_gWi79Gyp43obz" : {
+          "result" : "lose",
+          "team" : 9,
+          "version" : "A"
+        },
+        "-Ll1nClx6AnEzPWpLwlJ" : {
+          "result" : "win",
+          "team" : 11,
+          "version" : "A"
+        },
+        "-Ll1nCm1EDXGt6QGf9z7" : {
+          "result" : "lose",
+          "team" : 26,
+          "version" : "A"
+        },
+        "-Ll1olANE2vNyudOlh5G" : {
+          "result" : "win",
+          "team" : 20,
+          "version" : "A"
+        },
+        "-Ll1olAT1umV8ELCUxvl" : {
+          "result" : "lose",
+          "team" : 3,
+          "version" : "A"
+        },
+        "-Ll1qXq0vLY_bL87nZRS" : {
+          "result" : "win",
+          "team" : 27,
+          "version" : "A"
+        },
+        "-Ll1qXq7z-oJWJsaWJO6" : {
+          "result" : "lose",
+          "team" : 4,
+          "version" : "A"
+        },
+        "-Ll1vft4qAbjTZ6c_RnD" : {
+          "result" : "win",
+          "team" : 13,
+          "version" : "A"
+        },
+        "-Ll1vftEsNt_xeB4rYI0" : {
+          "result" : "lose",
+          "team" : 23,
+          "version" : "A"
+        },
+        "-Ll1xbVzxW7bMmykqZvj" : {
+          "result" : "win",
+          "team" : 22,
+          "version" : "A"
+        },
+        "-Ll1xbW3Z35fgYTMJ7tf" : {
+          "result" : "lose",
+          "team" : 7,
+          "version" : "A"
+        },
+        "group" : {
+          "blue" : 2,
+          "purple" : 3,
+          "red" : 2,
+          "yellow" : 3
+        }
+      },
+      "intro" : "Haven’t you ever dreamed of being Jasmine and Aladdin? In this game, your team members will be Jasmine and Aladdin to show off your team spirit to follow the track, standing side to side. The team that completes first wins.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "30",
+        "floor" : 1
+      },
+      "name" : "Magic Carpet Ride",
+      "team" : 20,
+      "type" : "Match"
+    },
+    "-LjPZQ8z81zK6asm6R_W" : {
+      "history" : {
+        "-Ll1f9kLQqTVJOEiSAhD" : {
+          "result" : "win",
+          "team" : 23,
+          "version" : "A"
+        },
+        "-Ll1f9kP8AqLUSzXhFL0" : {
+          "result" : "lose",
+          "team" : 1,
+          "version" : "A"
+        },
+        "-Ll1hZH0QIHMnWgQHPHA" : {
+          "result" : "win",
+          "team" : 19,
+          "version" : "A"
+        },
+        "-Ll1hZH5omynpCGwDCKq" : {
+          "result" : "lose",
+          "team" : 18,
+          "version" : "A"
+        },
+        "-Ll1kA7FFMdXdQ5beetm" : {
+          "result" : "win",
+          "team" : 20,
+          "version" : "A"
+        },
+        "-Ll1kA7JAI19qN-UPb7o" : {
+          "result" : "lose",
+          "team" : 22,
+          "version" : "A"
+        },
+        "-Ll1lfI9s9t59kmlKYXT" : {
+          "result" : "win",
+          "team" : 16,
+          "version" : "A"
+        },
+        "-Ll1lfIFhxMX2mk7PmLZ" : {
+          "result" : "lose",
+          "team" : 17,
+          "version" : "A"
+        },
+        "-Ll1qV3TjKZ_yjJ5_F6j" : {
+          "result" : "win",
+          "team" : 12,
+          "version" : "A"
+        },
+        "-Ll1qV3gw96nTG5m21OM" : {
+          "result" : "lose",
+          "team" : 6,
+          "version" : "A"
+        },
+        "-Ll1uql1fa3brY7V4mFN" : {
+          "result" : "win",
+          "team" : 28,
+          "version" : "A"
+        },
+        "-Ll1uqlA8owW26V9YTmJ" : {
+          "result" : "lose",
+          "team" : 9,
+          "version" : "A"
+        },
+        "group" : {
+          "blue" : 2,
+          "yellow" : 4
+        }
+      },
+      "intro" : "Dribble down the helium balloon, turn around the placed cone, and return to the starting point. Be careful not to let the balloon reach the ceiling, or you’ll have to start from the beginning. The team that completes first wins.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "6",
+        "floor" : 1
+      },
+      "name" : "Balloon Dribble",
+      "team" : 28,
+      "type" : "Match"
+    },
+    "-LjQkW-x4CEeRgvaZ86X" : {
+      "history" : {
+        "-Ll1ebhSobUcMEHWPiBK" : {
+          "result" : "win",
+          "team" : 7,
+          "version" : "A"
+        },
+        "-Ll1ebhWrrXvxraVLCmJ" : {
+          "result" : "lose",
+          "team" : 10,
+          "version" : "A"
+        },
+        "-Ll1hAldDk84Wa6ZZoZb" : {
+          "result" : "win",
+          "team" : 12,
+          "version" : "A"
+        },
+        "-Ll1hAlg96ALdpD-jr3h" : {
+          "result" : "lose",
+          "team" : 14,
+          "version" : "A"
+        },
+        "-Ll1jPABi7uwmE6NBU3q" : {
+          "result" : "win",
+          "team" : 18,
+          "version" : "A"
+        },
+        "-Ll1jPAF0lCGzbG45g3_" : {
+          "result" : "lose",
+          "team" : 25,
+          "version" : "A"
+        },
+        "-Ll1logrDCHLWb9qVhJe" : {
+          "result" : "win",
+          "team" : 2,
+          "version" : "A"
+        },
+        "-Ll1logu0rO6Ulvr_WPb" : {
+          "result" : "lose",
+          "team" : 13,
+          "version" : "A"
+        },
+        "-Ll1q__QzId5bIePKyit" : {
+          "result" : "win",
+          "team" : 21,
+          "version" : "A"
+        },
+        "-Ll1q___WkAC-tC7yPeG" : {
+          "result" : "lose",
+          "team" : 28,
+          "version" : "A"
+        },
+        "-Ll1t7ukLc4GWwXO-rmH" : {
+          "result" : "win",
+          "team" : 19,
+          "version" : "A"
+        },
+        "-Ll1t7un-ojrHPOzBx6b" : {
+          "result" : "lose",
+          "team" : 9,
+          "version" : "A"
+        },
+        "group" : {
+          "blue" : 2,
+          "purple" : 2,
+          "red" : 1,
+          "yellow" : 1
+        }
+      },
+      "intro" : "In this game, each team first creates a chain by holding hands with each other. Two groups must move their bodies only (no use of hand) to go through the hula hoop. The team that passes through the hula hoop faster wins.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "12",
+        "floor" : 1
+      },
+      "name" : "Hula Rush",
+      "team" : 2,
+      "type" : "Match"
+    },
+    "-LjQkaXxCMmgVg7YH4en" : {
+      "history" : {
+        "-Ll1e41m_-oKkhVejR17" : {
+          "result" : "win",
+          "team" : 28,
+          "version" : "A"
+        },
+        "-Ll1e4205CcM4C1ACeXA" : {
+          "result" : "lose",
+          "team" : 6,
+          "version" : "A"
+        },
+        "-Ll1gHFgln_OVokdu7hJ" : {
+          "result" : "win",
+          "team" : 15,
+          "version" : "A"
+        },
+        "-Ll1gHFoRXtfCnxqan0v" : {
+          "result" : "lose",
+          "team" : 17,
+          "version" : "A"
+        },
+        "-Ll1ib7bO8W4_r4Y7cnx" : {
+          "result" : "win",
+          "team" : 22,
+          "version" : "A"
+        },
+        "-Ll1ib7lPBsftz3SamFN" : {
+          "result" : "lose",
+          "team" : 16,
+          "version" : "A"
+        },
+        "-Ll1lHklj6fUPvERqRtM" : {
+          "result" : "win",
+          "team" : 25,
+          "version" : "A"
+        },
+        "-Ll1lHkumFWHwv9kzyUR" : {
+          "result" : "lose",
+          "team" : 11,
+          "version" : "A"
+        },
+        "-Ll1n3WF0nSxajRZtVia" : {
+          "result" : "win",
+          "team" : 14,
+          "version" : "A"
+        },
+        "-Ll1n3WI2r-8gTnGS0LB" : {
+          "result" : "lose",
+          "team" : 4,
+          "version" : "A"
+        },
+        "-Ll1p5xOsjXgjQod-B2Q" : {
+          "result" : "win",
+          "team" : 24,
+          "version" : "A"
+        },
+        "-Ll1p5xc3TquKnot0xmw" : {
+          "result" : "lose",
+          "team" : 27,
+          "version" : "A"
+        },
+        "-Ll1sxwrb1_KcG9hG1wv" : {
+          "result" : "win",
+          "team" : 21,
+          "version" : "A"
+        },
+        "-Ll1sxxB026ES3d0FPyB" : {
+          "result" : "lose",
+          "team" : 12,
+          "version" : "A"
+        },
+        "-Ll1v7PEnFyZuyYjpN2k" : {
+          "result" : "win",
+          "team" : 26,
+          "version" : "A"
+        },
+        "-Ll1v7PVjqWB-UvF-dn_" : {
+          "result" : "lose",
+          "team" : 19,
+          "version" : "A"
+        },
+        "-Ll1xzlSE7lByiukywFE" : {
+          "result" : "win",
+          "team" : 2,
+          "version" : "A"
+        },
+        "-Ll1xzlbwazQvwDca9v8" : {
+          "result" : "lose",
+          "team" : 13,
+          "version" : "A"
+        },
+        "group" : {
+          "blue" : 1,
+          "purple" : 4,
+          "red" : 2,
+          "yellow" : 2
+        }
+      },
+      "intro" : "This is a mini version of curling. Flick your bottle cap to make it land as close to the center as possible. Knocking the other team’s bottle cap from the center is allowed! Team with more score at the end wins.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "16",
+        "floor" : 1
+      },
+      "name" : "Bottle Cap Curling",
+      "team" : 2,
+      "type" : "Match"
+    },
+    "-LjQkcg5AWRqPjRxLc6e" : {
+      "history" : {
+        "-Ll1dpzj7xNtkCQtZDUk" : {
+          "result" : "win",
+          "team" : 17,
+          "version" : "A"
+        },
+        "-Ll1dq-3DvTbu31EVECc" : {
+          "result" : "lose",
+          "team" : 15,
+          "version" : "A"
+        },
+        "-Ll1gF2H4wCtFjE3mlKe" : {
+          "result" : "win",
+          "team" : 8,
+          "version" : "A"
+        },
+        "-Ll1gF2bGvWikN2vHu8z" : {
+          "result" : "lose",
+          "team" : 22,
+          "version" : "A"
+        },
+        "-Ll1i5fTGjtLiHH7qrM_" : {
+          "result" : "win",
+          "team" : 23,
+          "version" : "A"
+        },
+        "-Ll1i5gVdRaeiIAgDhUl" : {
+          "result" : "lose",
+          "team" : 5,
+          "version" : "A"
+        },
+        "-Ll1jt-oNV3KRV01tzxN" : {
+          "result" : "win",
+          "team" : 9,
+          "version" : "A"
+        },
+        "-Ll1jt07W56ioNCezUho" : {
+          "result" : "lose",
+          "team" : 2,
+          "version" : "A"
+        },
+        "-Ll1lj4kf0tDeo_nfYZN" : {
+          "result" : "win",
+          "team" : 1,
+          "version" : "A"
+        },
+        "-Ll1lj57UWr6x5vFwMON" : {
+          "result" : "lose",
+          "team" : 26,
+          "version" : "A"
+        },
+        "-Ll1nDWkrDLc9xlzwtep" : {
+          "result" : "win",
+          "team" : 7,
+          "version" : "A"
+        },
+        "-Ll1nDXQZFP9iWvE6_GI" : {
+          "result" : "lose",
+          "team" : 10,
+          "version" : "A"
+        },
+        "-Ll1qyAp30vxcTM0eyc_" : {
+          "result" : "win",
+          "team" : 20,
+          "version" : "A"
+        },
+        "-Ll1qyBLJPVNudMYUPcT" : {
+          "result" : "lose",
+          "team" : 18,
+          "version" : "A"
+        },
+        "-Ll1t8mAcwBouvefkWQC" : {
+          "result" : "win",
+          "team" : 27,
+          "version" : "A"
+        },
+        "-Ll1t8mZGxga4IBR-CNw" : {
+          "result" : "lose",
+          "team" : 14,
+          "version" : "A"
+        },
+        "-Ll1uuj5CjZUNAPrGZN9" : {
+          "result" : "win",
+          "team" : 21,
+          "version" : "A"
+        },
+        "-Ll1uujUe7sQDry_-lpU" : {
+          "result" : "lose",
+          "team" : 12,
+          "version" : "A"
+        },
+        "group" : {
+          "blue" : 3,
+          "red" : 4,
+          "yellow" : 2
+        }
+      },
+      "intro" : "Chaotic Race is a relay game, composed of 6 minigames. Each team member is in charge of one game. The team that completes the fastest wins.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "22",
+        "floor" : 1
+      },
+      "name" : "Chaotic Race",
+      "team" : 21,
+      "type" : "Match"
+    },
+    "-LjQkqxAmEBsgijqcN5L" : {
+      "history" : {
+        "-Ll1djawbxZcsbBpsh2c" : {
+          "result" : "lose",
+          "team" : 20,
+          "version" : "A"
+        },
+        "-Ll1fvhb6in4nsAg4x6B" : {
+          "result" : "lose",
+          "team" : 2,
+          "version" : "A"
+        },
+        "-Ll1hpDmpBmInEeOSHVV" : {
+          "result" : "lose",
+          "team" : 10,
+          "version" : "A"
+        },
+        "-Ll1jxMCUdDW9L7KFFl8" : {
+          "result" : "lose",
+          "team" : 21,
+          "version" : "A"
+        },
+        "-Ll1pEEKMsLWVdJDuczq" : {
+          "result" : "win",
+          "team" : 14,
+          "version" : "A"
+        },
+        "-Ll1r4mXaoDQYwLNnHBY" : {
+          "result" : "win",
+          "team" : 9,
+          "version" : "A"
+        },
+        "-Ll1tOWuE-YDKWEKmiiS" : {
+          "result" : "win",
+          "team" : 4,
+          "version" : "A"
+        },
+        "-Ll1uuRUReuvuSNhbj0v" : {
+          "result" : "win",
+          "team" : 18,
+          "version" : "A"
+        },
+        "-Ll1xHEhYqerdNphK_WP" : {
+          "result" : "win",
+          "team" : 15,
+          "version" : "A"
+        }
+      },
+      "intro" : "Your team can only flip two cards at once by telling MC. If the pictures match, you leave them flipped. If not, you have to flip them back. If your team can flip every card in 12 trials, your team will succeed.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "32",
+        "floor" : 1
+      },
+      "name" : "Flip it",
+      "team" : 15,
+      "type" : "PassFail"
+    },
+    "-LjQksFmquKmFH3x8Z_y" : {
+      "history" : {
+        "-Ll1exTXsSDkiK7LGnKc" : {
+          "result" : "win",
+          "team" : 20,
+          "version" : "A"
+        },
+        "-Ll1gR628kFLT6ALu8Ol" : {
+          "result" : "win",
+          "team" : 7,
+          "version" : "A"
+        },
+        "-Ll1hXNkIMMm_DD8tcJe" : {
+          "result" : "lose",
+          "team" : 2,
+          "version" : "A"
+        },
+        "-Ll1isoQ8-XMCGy5ldpM" : {
+          "result" : "lose",
+          "team" : 10,
+          "version" : "A"
+        },
+        "-Ll1kx7xTCMxKV3AcuuA" : {
+          "result" : "lose",
+          "team" : 21,
+          "version" : "A"
+        },
+        "-Ll1oe8jxpQOtPgP1ZOO" : {
+          "result" : "win",
+          "team" : 18,
+          "version" : "A"
+        },
+        "-Ll1pkAvU0jsgE8tMXU9" : {
+          "result" : "lose",
+          "team" : 11,
+          "version" : "A"
+        },
+        "-Ll1qkLaaCqQvXFuQ5Bm" : {
+          "result" : "win",
+          "team" : 8,
+          "version" : "A"
+        },
+        "-Ll1rdvm5PMQjrDPg_M9" : {
+          "result" : "win",
+          "team" : 26,
+          "version" : "A"
+        },
+        "-Ll1se5NYn2p7YE1igxm" : {
+          "result" : "win",
+          "team" : 24,
+          "version" : "A"
+        },
+        "-Ll1tpYUQ3z6mmS4C0G7" : {
+          "result" : "lose",
+          "team" : 13,
+          "version" : "A"
+        },
+        "-Ll1utjCEyzvFp2LyLis" : {
+          "result" : "win",
+          "team" : 2,
+          "version" : "A"
+        },
+        "-Ll1vytiAitoabNCpHna" : {
+          "result" : "win",
+          "team" : 15,
+          "version" : "A"
+        }
+      },
+      "intro" : "If your team succeeds in taking a photo of at least 3 of the 6 given poses, your team can succeed.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "33",
+        "floor" : 1
+      },
+      "name" : "Pic it",
+      "team" : 15,
+      "type" : "PassFail"
+    },
+    "-LjQkud4MHSgho8WlScC" : {
+      "history" : {
+        "-Ll1e0i0djodQF3CUUpa" : {
+          "result" : "win",
+          "team" : 2,
+          "version" : "A"
+        },
+        "-Ll1gOSx0rJ1TTxuA8Va" : {
+          "result" : "lose",
+          "team" : 20,
+          "version" : "A"
+        },
+        "-Ll1hH0s3kanrr18O32b" : {
+          "result" : "win",
+          "team" : 7,
+          "version" : "A"
+        },
+        "-Ll1iCmHvibCViJU1XIx" : {
+          "result" : "win",
+          "team" : 21,
+          "version" : "A"
+        },
+        "-Ll1jhVx3DSeELmNkY6y" : {
+          "result" : "lose",
+          "team" : 10,
+          "version" : "A"
+        },
+        "-Ll1pIsTTPssMcmnseqS" : {
+          "result" : "win",
+          "team" : 16,
+          "version" : "A"
+        },
+        "-Ll1q9pZk4GD9edGtG_X" : {
+          "result" : "win",
+          "team" : 26,
+          "version" : "A"
+        },
+        "-Ll1r29CoQxs5axhfo2U" : {
+          "result" : "win",
+          "team" : 24,
+          "version" : "A"
+        },
+        "-Ll1s1e5j7jbNtRA1Ogc" : {
+          "result" : "lose",
+          "team" : 13,
+          "version" : "A"
+        },
+        "-Ll1slVK8djOHtD9KD8O" : {
+          "result" : "win",
+          "team" : 18,
+          "version" : "A"
+        },
+        "-Ll1tX369vMmuZUkqz5O" : {
+          "result" : "win",
+          "team" : 15,
+          "version" : "A"
+        },
+        "-Ll1uYXQDJK6VvfJqb8l" : {
+          "result" : "win",
+          "team" : 4,
+          "version" : "A"
+        },
+        "-Ll1vTraoYJkfMryvnnI" : {
+          "result" : "lose",
+          "team" : 14,
+          "version" : "A"
+        },
+        "-Ll1wd8xlHY20_2H6L7A" : {
+          "result" : "win",
+          "team" : 6,
+          "version" : "A"
+        }
+      },
+      "intro" : " If all members succeed in pronouncing those sentences correctly in the given time, your team will succeed.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "39",
+        "floor" : 1
+      },
+      "name" : "Say it",
+      "team" : 6,
+      "type" : "PassFail"
+    },
+    "-LjQl91PjJB7c-UQYYwe" : {
+      "history" : {
+        "-Ll1cyaiy7Ic0PKdicUZ" : {
+          "record" : 108,
+          "team" : 4,
+          "version" : "1"
+        },
+        "-Ll1e482ISfgCm40uYzv" : {
+          "record" : 89,
+          "team" : 11,
+          "version" : "2"
+        },
+        "-Ll1ezR1-gkGHROljKH9" : {
+          "record" : 66,
+          "team" : 1,
+          "version" : "3"
+        },
+        "-Ll1g8oY0IOv-qWfAGbl" : {
+          "record" : 129,
+          "team" : 3,
+          "version" : "4"
+        },
+        "-Ll1hfm7dFQ3CoYxqHaP" : {
+          "record" : 169,
+          "team" : 6,
+          "version" : "5"
+        },
+        "-Ll1j8XeH7FIbbBSljuS" : {
+          "record" : 129,
+          "team" : 19,
+          "version" : "6"
+        },
+        "-Ll1kI-RfC3GWlw_kRBy" : {
+          "record" : 180,
+          "team" : 15,
+          "version" : "7"
+        },
+        "-Ll1l68zrh2S5xVKNa91" : {
+          "record" : 145,
+          "team" : 15,
+          "version" : "8"
+        },
+        "-Ll1llGMCX5dAkWPKYdz" : {
+          "record" : 65,
+          "team" : 15,
+          "version" : "9"
+        },
+        "-Ll1mn4lAWQbXLJOd9Nt" : {
+          "record" : 125,
+          "team" : 18,
+          "version" : "10"
+        },
+        "-Ll1no5kbdAJ2B-QDIEU" : {
+          "record" : 64,
+          "team" : 28,
+          "version" : "11"
+        },
+        "-Ll1owviHilaUaeXNgzp" : {
+          "record" : 140,
+          "team" : 13,
+          "version" : "12"
+        },
+        "-Ll1prBCoxJg80XMghR9" : {
+          "record" : 106,
+          "team" : 13,
+          "version" : "14"
+        },
+        "-Ll1qxlykeYIfPKTxvAI" : {
+          "record" : 107,
+          "team" : 5,
+          "version" : "10"
+        },
+        "-Ll1sq0Gs6WiWKztLn5N" : {
+          "record" : 98,
+          "team" : 3,
+          "version" : "7"
+        },
+        "-Ll1uTOQLtaKJKpcgNMU" : {
+          "record" : 62,
+          "team" : 17,
+          "version" : "6"
+        },
+        "-Ll1vUa4fxKcQofL-121" : {
+          "record" : 58,
+          "team" : 28,
+          "version" : "8"
+        }
+      },
+      "intro" : "You have to guess the word written on a post-it, which will be attached on your forehead. You can only see the words on other people’s forehead. Based on what other people say about your word, you have to guess the word. The time until all members get their word correctly will be recorded.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "24",
+        "floor" : "2"
+      },
+      "name" : "Make me say it",
+      "team" : 28,
+      "type" : "Record"
+    },
+    "-LjQlAoJlFEMVccxiBry" : {
+      "history" : {
+        "-Ll1dS6p-Sd0suwsLFRb" : {
+          "record" : 32,
+          "team" : 25,
+          "version" : "A"
+        },
+        "-Ll1eY-1U5r6T_mErKR5" : {
+          "record" : 27,
+          "team" : 14,
+          "version" : "A"
+        },
+        "-Ll1gFHeIXSPz6AbCgn2" : {
+          "record" : 37,
+          "team" : 13,
+          "version" : "A"
+        },
+        "-Ll1hfMm6p0ZQaN6tIrs" : {
+          "record" : 40,
+          "team" : 28,
+          "version" : "A"
+        },
+        "-Ll1ijgyFkI75E4WLMrZ" : {
+          "record" : 27,
+          "team" : 15,
+          "version" : "A"
+        },
+        "-Ll1k4KKaObSUDbAmfeu" : {
+          "record" : 23,
+          "team" : 5,
+          "version" : "A"
+        },
+        "-Ll1lw1-k46bCR4pwaUm" : {
+          "record" : 33,
+          "team" : 3,
+          "version" : "A"
+        },
+        "-Ll1miJW3xuUBQu-dA_B" : {
+          "record" : 21,
+          "team" : 23,
+          "version" : "A"
+        },
+        "-Ll1nndGzqy7iwlnlbq5" : {
+          "record" : 26,
+          "team" : 22,
+          "version" : "A"
+        },
+        "-Ll1p2rf0liV3t19fZ50" : {
+          "record" : 17,
+          "team" : 1,
+          "version" : "A"
+        },
+        "-Ll1qomNmLoackyUm_PA" : {
+          "record" : 29,
+          "team" : 19,
+          "version" : "A"
+        },
+        "-Ll1sEaW7veyH2wa5MV5" : {
+          "record" : 27,
+          "team" : 16,
+          "version" : "A"
+        },
+        "-Ll1u8uZ1HTqmQeW4enO" : {
+          "record" : 25,
+          "team" : 11,
+          "version" : "A"
+        },
+        "-Ll1vNU4KceG_pakSQMp" : {
+          "record" : 21,
+          "team" : 6,
+          "version" : "A"
+        },
+        "-Ll1wFgoM25H3Y5C1d5i" : {
+          "record" : 23,
+          "team" : 27,
+          "version" : "A"
+        },
+        "-Ll1xHIkfGCL3D4tdE3f" : {
+          "record" : 18,
+          "team" : 12,
+          "version" : "A"
+        }
+      },
+      "intro" : "This is the simplified version of bowling. Each team member will roll a ball to knock down water bottles. There are three stages with 10 bottles each. The total number of times that your team rolled the ball to knock down all bottles will be recorded.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "30",
+        "floor" : "2"
+      },
+      "name" : "Mini Bowling",
+      "team" : 1,
+      "type" : "Record"
+    },
+    "-LjQlD6TGyEiKf-55ADZ" : {
+      "history" : {
+        "-Ll1dCp2Id0JB8L4VAoD" : {
+          "record" : 82,
+          "team" : 3,
+          "version" : "A"
+        },
+        "-Ll1eOiNx_9zhMOQxTXg" : {
+          "record" : 300,
+          "team" : 4,
+          "version" : "A"
+        },
+        "-Ll1fObBLf-SLEysK7lF" : {
+          "record" : 136,
+          "team" : 26,
+          "version" : "A"
+        },
+        "-Ll1gX5ISH4eYeZOB6tJ" : {
+          "record" : 122,
+          "team" : 25,
+          "version" : "A"
+        },
+        "-Ll1hmJcevsagRbc4Jbp" : {
+          "record" : 300,
+          "team" : 13,
+          "version" : "A"
+        },
+        "-Ll1ikcFLFE6JzAGDn6w" : {
+          "record" : 138,
+          "team" : 27,
+          "version" : "A"
+        },
+        "-Ll1jfYiEz1WCXZz9G7o" : {
+          "record" : 123,
+          "team" : 6,
+          "version" : "A"
+        },
+        "-Ll1kkoBFFV7LI4A7IFe" : {
+          "record" : 167,
+          "team" : 7,
+          "version" : "A"
+        },
+        "-Ll1lYATrGtPTrR12smN" : {
+          "record" : 72,
+          "team" : 18,
+          "version" : "A"
+        },
+        "-Ll1mWOmAzvFFTECaMHP" : {
+          "record" : 157,
+          "team" : 28,
+          "version" : "A"
+        },
+        "-Ll1nUP2Jm5i7N8bm2sV" : {
+          "record" : 102,
+          "team" : 2,
+          "version" : "A"
+        },
+        "-Ll1oaIfx3gtqDE5ef6s" : {
+          "record" : 160,
+          "team" : 9,
+          "version" : "A"
+        },
+        "-Ll1pTACpOzV258VIZ3x" : {
+          "record" : 92,
+          "team" : 19,
+          "version" : "A"
+        },
+        "-Ll1qaYcc1s8YPhpPeI0" : {
+          "record" : 126,
+          "team" : 1,
+          "version" : "A"
+        },
+        "-Ll1ra92I6BOeMIl2O59" : {
+          "record" : 98,
+          "team" : 23,
+          "version" : "A"
+        },
+        "-Ll1tEstN-zhxm--ERic" : {
+          "record" : 174,
+          "team" : 10,
+          "version" : "A"
+        },
+        "-Ll1u9xV_nme1jdd6B9d" : {
+          "record" : 95,
+          "team" : 25,
+          "version" : "A"
+        },
+        "-Ll1vVvn5PimpM7mmbGt" : {
+          "record" : 154,
+          "team" : 24,
+          "version" : "A"
+        },
+        "-Ll1xGVxt5V6Y-eVWM0b" : {
+          "record" : 300,
+          "team" : 8,
+          "version" : "A"
+        },
+        "-Ll2-Pe4nw2S-HWsaJMf" : {
+          "record" : 320,
+          "team" : 4,
+          "version" : "A"
+        }
+      },
+      "intro" : "Roll the ball on the cloth into the hole with your team members. Try to focus on your movement and collaboration with your teammates. The time it took for your team to complete the mission will be recorded.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "36",
+        "floor" : "2"
+      },
+      "name" : "Cloth Soccer",
+      "team" : 18,
+      "type" : "Record"
+    },
+    "-LjQlFjXVDas-jV_1lgK" : {
+      "history" : {
+        "-Ll1dOsMWucIhZ6gjEDk" : {
+          "record" : 296,
+          "team" : 8,
+          "version" : "A"
+        },
+        "-Ll1f0UNY0PgHgaDQG1e" : {
+          "record" : 400,
+          "team" : 3,
+          "version" : "A"
+        },
+        "-Ll1gEgMQzpWCXHsWkfP" : {
+          "record" : 450,
+          "team" : 9,
+          "version" : "A"
+        },
+        "-Ll1hCEnEtoeAgnsI3pu" : {
+          "record" : 178,
+          "team" : 26,
+          "version" : "A"
+        },
+        "-Ll1iIMVzPbN7cjaU9BQ" : {
+          "record" : 309,
+          "team" : 11,
+          "version" : "A"
+        },
+        "-Ll1jFoM01C-_1wM2Vzx" : {
+          "record" : 340,
+          "team" : 13,
+          "version" : "A"
+        },
+        "-Ll1kObTR2Tb0F-45a_2" : {
+          "record" : 400,
+          "team" : 4,
+          "version" : "A"
+        },
+        "-Ll1lnEiaYd2X86rpdmt" : {
+          "record" : 340,
+          "team" : 22,
+          "version" : "A"
+        },
+        "-Ll1mwSs5nz_PUjC8lxL" : {
+          "record" : 490,
+          "team" : 15,
+          "version" : "A"
+        },
+        "-Ll1oEMlBlusoIl4WxFZ" : {
+          "record" : 400,
+          "team" : 19,
+          "version" : "A"
+        },
+        "-Ll1poRTob0DwbQaffZ6" : {
+          "record" : 500,
+          "team" : 5,
+          "version" : "A"
+        },
+        "-Ll1q_c4P97VKQtWUxKa" : {
+          "record" : 188,
+          "team" : 15,
+          "version" : "A"
+        },
+        "-Ll1s5WIbSadn6PDocsr" : {
+          "record" : 189,
+          "team" : 1,
+          "version" : "A"
+        },
+        "-Ll1tGqXp1ZixHK2xlQc" : {
+          "record" : 400,
+          "team" : 25,
+          "version" : "A"
+        },
+        "-Ll1ubRdx7yhOP34VDdW" : {
+          "record" : 430,
+          "team" : 16,
+          "version" : "A"
+        },
+        "-Ll1w0fKaOzpb9CvJWcq" : {
+          "record" : 400,
+          "team" : 17,
+          "version" : "A"
+        },
+        "-Ll1wqmFLo8dTbGxYuMI" : {
+          "record" : 175,
+          "team" : 9,
+          "version" : "A"
+        },
+        "-Ll1xzRSJQjVBrXL_BRH" : {
+          "record" : 500,
+          "team" : 24,
+          "version" : "A"
+        }
+      },
+      "intro" : "Your team has to guess the title of the movie from the given emojis. The time that it takes to get every question correct will be recorded.",
+      "isRunning" : true,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "42",
+        "floor" : "2"
+      },
+      "name" : "Emoji Movie Quiz",
+      "team" : 9,
+      "type" : "Record"
+    },
+    "-LjQlgsrGiVk10iXSLOp" : {
+      "history" : {
+        "-Ll1dvsEAFqS1d4l4ee2" : {
+          "record" : 51,
+          "team" : 1,
+          "version" : "A"
+        },
+        "-Ll1gdOMt2g59lhn2iFA" : {
+          "record" : -51,
+          "team" : 1,
+          "version" : "A"
+        },
+        "-Ll1gfc_PAeBcevEHUWx" : {
+          "record" : -28,
+          "team" : 25,
+          "version" : "A"
+        },
+        "-Ll1gsIsq3XljzIWttN0" : {
+          "record" : -56,
+          "team" : 11,
+          "version" : "A"
+        },
+        "-Ll1j2wC7TYSMOffYETn" : {
+          "record" : -9999999,
+          "team" : 4,
+          "version" : "A"
+        }
+      },
+      "intro" : "Hit the cup with ping pong racket and ping pong ball. The number that your team forms using the numbers and operations that your team has obtained will be recorded.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : 22,
+        "floor" : 2
+      },
+      "name" : "Math Ping Pong",
+      "team" : 4,
+      "type" : "Record"
+    },
+    "-LjQlj-dunbDWhlNjx5g" : {
+      "history" : {
+        "-Ll1diIjyL1hl9L2YhOI" : {
+          "record" : 2.41,
+          "team" : 13,
+          "version" : "A"
+        },
+        "-Ll1f8s0hKWcfN1ZMvZW" : {
+          "record" : 2.49,
+          "team" : 27,
+          "version" : "A"
+        },
+        "-Ll1gfcQU3azKylAOhBq" : {
+          "record" : 2.13,
+          "team" : 1,
+          "version" : "A"
+        },
+        "-Ll1iSWbuUlz7ZfbyqwP" : {
+          "record" : 1.48,
+          "team" : 3,
+          "version" : "A"
+        },
+        "-Ll1jn74IueDWoNLkUFl" : {
+          "record" : 1.41,
+          "team" : 26,
+          "version" : "A"
+        },
+        "-Ll1lNNUv2ewelS2WGyV" : {
+          "record" : 1.23,
+          "team" : 19,
+          "version" : "A"
+        },
+        "-Ll1sZElbMq5t9F8iwhs" : {
+          "record" : 1.31,
+          "team" : 11,
+          "version" : "A"
+        },
+        "-Ll1uaRYAp1uXHPACT6-" : {
+          "record" : 1.25,
+          "team" : 8,
+          "version" : "A"
+        }
+      },
+      "intro" : "Your team will be given some missions to accomplish, with your arms immovable. The time until all members pass the missions will be recorded.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "15",
+        "floor" : "2"
+      },
+      "name" : "Zombie Game",
+      "team" : 19,
+      "type" : "Record"
+    },
+    "-LjQllSB7FWNU-WBWmE5" : {
+      "history" : {
+        "-Ll1fF0TiHmU5sEkkDq1" : {
+          "result" : "lose",
+          "team" : 16,
+          "version" : "A"
+        },
+        "-Ll1i5BsTCVEdukak6yr" : {
+          "result" : "lose",
+          "team" : 24,
+          "version" : "A"
+        },
+        "-Ll1oGS3FKVnkC7WEl1_" : {
+          "result" : "win",
+          "team" : 21,
+          "version" : "A"
+        },
+        "-Ll1qZsFfxPhUIVK4BZ1" : {
+          "result" : "win",
+          "team" : 2,
+          "version" : "A"
+        },
+        "-Ll1vCa0aKHq3nzfvPme" : {
+          "result" : "lose",
+          "team" : 1,
+          "version" : "A"
+        },
+        "-Ll1yXpMjRUW8yX7KPQq" : {
+          "result" : "lose",
+          "team" : 19,
+          "version" : "A"
+        }
+      },
+      "intro" : " Each member will do a jump rope while performing a mission. When your team passes at least 2 of the 4 given missions, your team will succeed.",
+      "isRunning" : false,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : "37",
+        "floor" : "2"
+      },
+      "name" : "Jump it",
+      "team" : 2,
+      "type" : "PassFail"
+    },
+    "-LjQloJ13vDny0M3N405" : {
+      "history" : {
+        "-Ll1dQlTv5_VYSZdzDY1" : {
+          "result" : "lose",
+          "team" : 26,
+          "version" : "A"
+        },
+        "-Ll1dw9c8KzUB7kORBJc" : {
+          "result" : "lose",
+          "team" : 24,
+          "version" : "A"
+        },
+        "-Ll1esCL9Uxxfy3U2uhH" : {
+          "result" : "lose",
+          "team" : 9,
+          "version" : "A"
+        },
+        "-Ll1gK3vDBIGla_SLYlh" : {
+          "result" : "lose",
+          "team" : 16,
+          "version" : "A"
+        },
+        "-Ll1gwxCWCxkp8_f-VVR" : {
+          "result" : "win",
+          "team" : 27,
+          "version" : "A"
+        },
+        "-Ll1iZ2MJmsj0xnz0k0P" : {
+          "result" : "win",
+          "team" : 28,
+          "version" : "A"
+        },
+        "-Ll1jqWn26gwYIuOH9Ef" : {
+          "result" : "lose",
+          "team" : 3,
+          "version" : "A"
+        },
+        "-Ll1kXnGg1bxNswx2Sts" : {
+          "result" : "win",
+          "team" : 6,
+          "version" : "A"
+        },
+        "-Ll1lJgVERJRzXsK_IX6" : {
+          "result" : "lose",
+          "team" : 5,
+          "version" : "A"
+        },
+        "-Ll1mb76Qk29-6pJWs-N" : {
+          "result" : "win",
+          "team" : 19,
+          "version" : "A"
+        },
+        "-Ll1nKitQDVlj5QWbuyN" : {
+          "result" : "lose",
+          "team" : 25,
+          "version" : "A"
+        },
+        "-Ll1o4C3G3ybgr8XLchL" : {
+          "result" : "win",
+          "team" : 17,
+          "version" : "A"
+        },
+        "-Ll1ooz9PYRLm2KhuLQ3" : {
+          "result" : "lose",
+          "team" : 15,
+          "version" : "A"
+        },
+        "-Ll1q1M65rbrtnGEXZ1Z" : {
+          "result" : "lose",
+          "team" : 22,
+          "version" : "A"
+        },
+        "-Ll1rRBAUcyN4TJiZIRG" : {
+          "result" : "win",
+          "team" : 2,
+          "version" : "A"
+        },
+        "-Ll1smGYjjg9dF2asdCf" : {
+          "result" : "lose",
+          "team" : 20,
+          "version" : "A"
+        },
+        "-Ll1tiSTPF9WdVVImepW" : {
+          "result" : "win",
+          "team" : 3,
+          "version" : "A"
+        },
+        "-Ll1ujA8iOrGUTfDTuw3" : {
+          "result" : "lose",
+          "team" : 10,
+          "version" : "A"
+        }
+      },
+      "intro" : "If your team succeeds in moving the given ping-pong ball only using pipes, your team will get success. This requires some teamwork!",
+      "isRunning" : true,
+      "isWaiting" : false,
+      "location" : {
+        "cell" : 39,
+        "floor" : "2"
+      },
+      "name" : "Pipe it",
+      "team" : 3,
+      "type" : "PassFail"
+    }
+  },
+  "visible" : {
+    "visible" : false
+  }
+}

@@ -23,10 +23,6 @@ function App() {
             <Route exact={true} path={ROUTES.HOME} component={HomePage}/>
             <Route exact={true} path={ROUTES.ADMIN} component={AdminPage}/>
             <Route path={ROUTES.ADMIN_GAME} component={GameAdminPage}/>
-            <Route path={ROUTES.ABOUT} component={AboutPage}/>
-            <Route path={ROUTES.RULES} component={RulesPage}/>
-            <Route path={ROUTES.TEAM} component={TeamPage}/>
-            <Route path={ROUTES.GAMES} component={GamesPage}/>
           </Switch>
         </div>
       <div className="page-footer">

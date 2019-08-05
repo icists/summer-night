@@ -20,11 +20,6 @@ const Navigation = () => (
             Home
           </div>
         </Link>
-        <Link to={ROUTES.ABOUT}>
-          <div className="nav-item nav-link">
-            About
-          </div>
-        </Link>
         <Link to={ROUTES.ADMIN}>
           <div className="nav-item nav-link">
             Admin

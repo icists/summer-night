@@ -5,15 +5,11 @@ import * as ROUTES from '../routes';
 
 import HomePage from '../Home';
 import AdminPage from '../Admin';
-import AboutPage from '../About';
-import RulesPage from '../Rules'
-import TeamPage from '../Team';
-import GamesPage from '../Games';
 import GameAdminPage from '../Admin/Game';
 
 import './App.css';
 
-function App() {
+function App() { 
   return (
     <div className="App">
       <HashRouter>
